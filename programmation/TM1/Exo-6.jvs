@@ -1,0 +1,23 @@
+void main() {
+    int a;
+    int b;
+    a = readInt("1: Pierre 2: Papier 3: Ciseaux: Puits 4");
+    b = readInt("1: Pierre 2: Papier 3: Ciseaux: Puits 4");
+    if (a < 1 || a > 4 || b < 1 || b > 4) {
+        println("Coup invalide");
+    } else if (a == b) {
+        println(" Egalite");
+    } else if (a == 1 && b == 2) {
+        println("Joueur 2 gagne");
+    } else if (a == 2 && b == 3) {
+        println("Joueur 2 gagne");
+    } else if (a == 3 && b == 1) {
+        println("Joueur 2 gagne");
+    } else if (a == 1 && b == 4) {
+        println("Joueur 2 gagne");
+    } else if (a == 3 && b == 4) {
+        println("Joueur 2 gagne");
+    } else {
+        println("Joueur 1 gagne");
+    }
+}

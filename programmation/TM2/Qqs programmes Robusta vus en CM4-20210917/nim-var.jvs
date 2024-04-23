@@ -1,0 +1,27 @@
+void main() {
+    int prem_pile, sec_pile, trois_pile, all;
+    all = prem_pile = sec_pile = trois_pile = readInt("Nombre initial d'allumettes ?");
+    int coup;
+    int joueur = 1;
+    while (prem_pile >= 1 && sec_pile >= 1 && trois_pile >= 1) {
+        print("Joueur courant : ");
+        println(joueur);
+        print("Nb allumettes restantes ");
+        println(all);
+        coup = readInt("Quel est votre coup ?");
+        while (!(coup >= 1 && coup <= 3 && coup <= all)) {
+            coup = readInt("Valeur du coup (merci d’entrer une valeur correcte) ?");
+        }
+        all = all - coup;
+        print("Coup joue : ");
+        println(coup);
+        // joueur = 3-joueur;
+        if (joueur == 1) {
+            joueur = 2;
+        } else {
+            joueur = 1;
+        }
+    }
+    print("LE GAGNANT EST : ");
+    println(joueur);
+}

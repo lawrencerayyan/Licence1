@@ -1,0 +1,21 @@
+void main() {}
+
+Wagon creation() {
+    Wagon first = new Wagon();
+    first.type = "Loco";
+    first.nombreDePlaces = 2;
+    Wagon w = first;
+    for (int i = 0; i < 10; i++) {
+        w.prochain = new Wagon();
+        w = w.prochain;
+        w.type = "Passagers";
+        w.nombreDePlaces = random(0, 125);
+    }  
+    return first;
+}
+
+class Wagon {
+    String type;
+    int nombreDePlaces;
+    Wagon prochain;
+}

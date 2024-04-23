@@ -1,0 +1,6 @@
+void main() {
+    int x;
+    String[] tab;
+    tab = new String[] {"hello", "hi", "hey", "salut", "slt"};
+    println(tab[random(0, 5)]);
+}

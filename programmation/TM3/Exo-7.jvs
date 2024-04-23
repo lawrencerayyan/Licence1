@@ -1,0 +1,78 @@
+void main() {
+    String a1, a2, a3, b1, b2, b3, c1, c2, c3;
+    a1 = a2 = a3 = b1 = b2 = b3 = c1 = c2 = c3 = " ";
+    int saisi = 0;
+    int nb_joueur = 2;
+    String caractere = "";
+    int victoire = 0;
+    println(a1 + " | " + a2 + " | " + a3);
+    println("--+---+--");
+    println(b1 + " | " + b2 + " | " + b3);
+    println("--+---+--");
+    println(c1 + " | " + c2 + " | " + c3 + "\n\n\n");
+    while ((equal(a1, " ")
+                    || equal(a2, " ")
+                    || equal(a3, " ")
+                    || equal(b1, " ")
+                    || equal(b2, " ")
+                    || equal(b3, " ")
+                    || equal(c1, " ")
+                    || equal(c2, " ")
+                    || equal(c3, " "))
+            && victoire == 0) {
+        saisi = readInteger("Choisisez votre case (entre 1 et 9))");
+        clear();
+        if (nb_joueur == 1 && saisi <= 9 && saisi >= 1) {
+            nb_joueur++;
+            caractere = "O";
+
+        } else if (nb_joueur == 2 && saisi <= 9 && saisi >= 1) {
+            nb_joueur--;
+            caractere = "X";
+        }
+        if (saisi == 1 && equal(a1, " ")) {
+            a1 = caractere;
+        } else if (saisi == 2 && equal(a2, " ")) {
+            a2 = caractere;
+        } else if (saisi == 3 && equal(a3, " ")) {
+            a3 = caractere;
+        } else if (saisi == 4 && equal(b1, " ")) {
+            b1 = caractere;
+        } else if (saisi == 5 && equal(b2, " ")) {
+            b2 = caractere;
+        } else if (saisi == 6 && equal(b3, " ")) {
+            b3 = caractere;
+        } else if (saisi == 7 && equal(c1, " ")) {
+            c1 = caractere;
+        } else if (saisi == 8 && equal(c2, " ")) {
+            c2 = caractere;
+        } else if (saisi == 9 && equal(c3, " ")) {
+            c3 = caractere;
+        }
+        println(a1 + " | " + a2 + " | " + a3);
+        println("--+---+--");
+        println(b1 + " | " + b2 + " | " + b3);
+        println("--+---+--");
+        println(c1 + " | " + c2 + " | " + c3 + "\n\n\n");
+        if ((equal(a1, a2) && equal(a2, a3)) && !equal(a1, " ")) {
+            victoire = 1;
+        } else if ((equal(b1, b2) && equal(b2, b3)) && !equal(b1, " ")) {
+            victoire = 1;
+        } else if ((equal(c1, c2) && equal(c2, c3)) && !equal(c1, " ")) {
+            victoire = 1;
+        } else if ((equal(a1, b1) && equal(b1, c1)) && !equal(c1, " ")) {
+            victoire = 1;
+        } else if ((equal(a2, b2) && equal(b2, c2)) && !equal(c2, " ")) {
+            victoire = 1;
+        } else if ((equal(a3, b3) && equal(b3, c3)) && !equal(c3, " ")) {
+            victoire = 1;
+        } else if ((equal(a1, b2) && equal(b2, c3)) && !equal(a1, " ")) {
+            victoire = 1;
+        } else if ((equal(c1, b2) && equal(b2, a3)) && !equal(a3, " ")) {
+            victoire = 1;
+        }
+        if (victoire == 1) {
+            println("Le joueur " + nb_joueur + " a gagne");
+        }
+    }
+}

@@ -1,0 +1,18 @@
+void transformeC(int[][] tab) {
+    for (int i = 0; i < tab.length; i++) {
+        for (int t = 0; t < tab.length; t++) {
+            tab[i][t] = 0;
+        }   
+    }
+}
+
+void main() {
+    int[][] tab = new int[readInteger("Quel est la taille ?")][readInteger("Quel est la taille ?")];
+    transformeC(tab);
+    for (int y = 0; y < tab.length; y++) {
+        for (int g = 0; g < tab.length; g++) {
+            print(tab[y][g]);
+        }
+    println("");
+    }
+}

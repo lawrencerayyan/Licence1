@@ -1,0 +1,30 @@
+void main() {
+    int x;
+    double allez_retour = 2;
+    int y = readInteger("Quel est le nombre de tiret ?");
+    int nb = readInteger("Combien de traverser voulez vous faire ?");
+    for (int v = 0; v < nb; v++) {
+        allez_retour++;
+        if ((allez_retour % 2) != 0) {
+            x = -1;
+        } else {
+            x = y;
+        }
+        for (int u = 0; u < y; u++) {
+            if ((allez_retour % 2) != 0) {
+                x++;
+            } else {
+                x--;
+            }
+            sleep(50);
+            clear();
+            for (int i = 0; i < y; i++) {
+                if (i != x) {
+                    print("-");
+                } else {
+                    print("|");
+                }
+            }
+        }
+    }
+}

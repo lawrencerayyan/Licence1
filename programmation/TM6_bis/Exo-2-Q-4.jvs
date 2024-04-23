@@ -1,0 +1,9 @@
+int sommeHasard(int[] t, int n) {
+    int somme = 0;
+    for (int i = 0; i < t.length; i++) {
+        somme = somme + t[random(0,t.length)];
+    }
+    return somme;
+}
+void main() {
+}

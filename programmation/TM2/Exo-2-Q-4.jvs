@@ -1,0 +1,8 @@
+void main() {
+    int i;
+    i = 7777;
+    while (i >= 33) {
+        println(i);
+        i = i - 2;
+    }
+}

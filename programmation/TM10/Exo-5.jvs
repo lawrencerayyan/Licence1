@@ -1,0 +1,22 @@
+static int MAX = 150;
+
+class Article {
+    String nom ;
+    double prix ;
+}
+
+class Panier {
+    Article [] article ;
+    int nbArticles ;
+}
+
+Panier initialiserPanier(){
+    Panier panier = new Panier();
+    panier.article = new Article[MAX];
+    panier.nbArticles = 0;
+    return panier;
+}
+
+void main() {
+    
+}

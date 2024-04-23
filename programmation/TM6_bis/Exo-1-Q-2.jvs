@@ -1,0 +1,11 @@
+boolean appartient(int[] t,int n){
+    boolean val_presente = false;
+    for (int i = 0; i < t.length; i++) {
+        if(n==t[i]) {
+            val_presente = true;
+        }
+    }
+    return val_presente;
+}
+void main() {
+}

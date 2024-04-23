@@ -1,0 +1,100 @@
+void main() {
+    Ligne rer = new Ligne();
+    Station paris = new Station();
+    dessert(rer,paris);
+    plusprofonde(rer);
+}
+
+class Ligne {
+int numero ;
+Station [] parcours ;
+}
+
+class Station {
+String nom ;
+int profondeur ;
+Ligne [] desservies ;
+}
+
+// Ligne [] creation(int numero){
+//    Ligne[] RER= new Ligne [4];
+   
+//     for (int i = 0; i < 4; i++) {
+        
+//      RER.numero[i]++ ;
+//     } 
+     
+//      RER.parcours = new Station[10];
+//     return RER;
+//  }
+
+boolean dessert(Ligne rer, Station paris) {
+    for (int i = 0; i < rer.parcours.length; i++) {
+        if (rer.parcours[i] == paris) {
+            return true;
+        }
+    }
+    return false;
+}
+ 
+Station plusprofonde(Ligne rer) {
+    Station spp = rer.parcours[0];
+    for (int i = 0; i < rer.parcours.length; i++) {
+        if (rer.parcours[i].profondeur > spp.profondeur) {
+            spp = rer.parcours[i];
+        }
+    }
+    return spp;
+} 
+
+void tremblement ( Ligne rer ) {
+    for (int i = 0; i < rer.parcours.length; i++) {
+        rer.parcours[i].profondeur = +10;
+    }
+}
+
+Ligne connecte(Station s1, Station s2) {
+    for (int i = 0; i < s1.desservies.length; i++) { 
+        Ligne rer = s1.desservies[i];
+        for (int j = 0; j < rer.parcours.length; j++) {
+            if (rer.parcours[j] == s2) {
+                return rer;
+            }
+        }
+    }
+    return null;
+}
+
+int distanceDirecte(Station s1, Station s2) {
+    if (s1 == s2) {
+        return 0;
+    }
+    for (int i = 0; i < s1.desservies.length; i++) {
+        Ligne rer = s1.desservies[i];
+        for (int j = 0; j < rer.parcours.length; j++) {
+            if (rer.parcours[j] == s2) {
+                return NombreArret(rer, s1, s2);
+            }
+        }
+    }
+    return -1;
+}
+
+int NombreArret(Ligne rer, Station s1, Station s2) {
+    int start = 0;
+    for (int i = 0; i < rer.parcours.length; i++) {
+        if (rer.parcours[i] == s1 || rer.parcours[i] == s2) {
+            start = i;
+            break;
+        }
+    }
+    int res = 0;
+    for (int i = start + 1; i < rer.parcours.length; i++) {
+        if (rer.parcours[i] == s2 || rer.parcours[i] == s1) {
+            res = i - start;
+        }
+    }
+    return res;
+}
+
+

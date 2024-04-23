@@ -1,0 +1,9 @@
+int somme(int[] t){
+    int sommme_des_val = 0;
+    for (int i = 0; i < t.length; i++) {
+        sommme_des_val = sommme_des_val + t[i];
+    }
+    return sommme_des_val;
+}
+void main() {
+}

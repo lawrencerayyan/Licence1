@@ -1,0 +1,40 @@
+void main() {
+    String menu =
+            readString("Menu: 'M'odifier note d eleve;'A'jouter un eleve;'S'upprimer un eleve");
+    int n = readInt("Entrer le nombre d eleves");
+    int x = readInt("Entrer le nombre de matiere");
+    int seuil = n;
+    int q = x + 1;
+    String[][] tab = new String[n][q];
+    for (int i = 0; i < n; i++) {
+        tab[i][0] = readString("Entrer le nom de l'etudiant");
+        for (int y = 1; y < q; y++) {
+            tab[i][y] = readString("Entrer la note");
+        }
+    }
+    if (equal(menu, "M")) {
+        int k = readInt("Saisir le numero de l'eleve que vous voulez modifier la note");
+        int l = readInt("Saisir le numero de la matiere pour modifier la note");
+        tab[k - 1][l] = readString("Entrer la nouvelle note");
+    } else if (equal(menu, "S")) {
+        int z = readInt("Saisir le numero de l'eleve que vous voulez supprimer");
+        int i = 0;
+        while (i != z && i < seuil) {
+            i++;
+        }
+        for (int j = i - 1; j < seuil - 1; j++) {
+            tab[j][0] = tab[j + 1][0];
+            for (int b = i - 1; b < tab[j].length; b++) {
+                tab[j][b] = tab[j + 1][b];
+            }
+        }
+        seuil--;
+    }
+
+    for (int b = 0; b < seuil; b++) {
+        for (int j = 0; j < q; j++) {
+            print(" " + tab[b][j] + " ");
+        }
+        println();
+    }
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+link {
+    display: none;
+}
+meta {
+    display: none;
+}
+style {
+    display: none;
+}
+:root {
+    --jp-carousel-primary-color: #fff;
+    --jp-carousel-primary-subtle-color: #999;
+    --jp-carousel-bg-color: #000;
+    --jp-carousel-bg-faded-color: #222;
+    --jp-carousel-border-color: #3a3a3a;
+}
+:root {
+    --swiper-navigation-size: 44px;
+}
+:root {
+    --swiper-theme-color: #007aff;
+}
+@media (max-width: 767px)
+html {
+    font-size: 16px;
+    line-height: 24px;
+}
+html, .l-header .widget, .menu-item-object-us_page_block {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+

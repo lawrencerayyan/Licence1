@@ -1,0 +1,25 @@
+#menu{
+    
+    font-size: large;
+}
+#menu > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: center;
+    padding: center;
+}
+#menu li a {
+    background-color: rgb(62, 66, 66);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
+#menu li a:hover{
+    background-color: tomato;
+}
+.Z{
+    background-color: rgb(235, 221, 32);
+}

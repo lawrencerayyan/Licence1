@@ -1,0 +1,11 @@
+void main() {
+    String saisi = "";
+    int erreur = 1;
+    while (erreur <= 5) {
+        saisi = readString("Saisir le code");
+        if (!equal("4 8 15 16 23 42", saisi)) {
+            erreur++;
+        }
+    }
+    println("explosif");
+}

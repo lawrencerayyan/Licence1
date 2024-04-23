@@ -1,0 +1,60 @@
+void main() {
+    int[] t;
+    int dim = readInteger("Dimension du tableau");
+    int seuil = readInteger("Partie utile du tableau");
+    int v = readInteger("Quelle valeur supprimer ?");
+    t = new int[dim];
+    saisie_tableau(t);
+    int j = recherche_valeur(t, v, seuil);
+    // j == -1 signifie pas de suppression !
+    if (j >= 0) {
+        seuil = suppression(t, j, seuil);
+    }
+    affiche_tableau(t, seuil);
+}
+
+void affiche_tableau(int[] arg, int seuil) {
+    for (int i = 0; i < seuil; i++) {
+        println("valeur pour indice " + i + " : " + arg[i]);
+    }
+}
+
+void saisie_tableau(int[] arg) {
+    // pas besoin de renvoyer un résultat !
+    // les modifications des cases du tableau "arg" seront préservées après la fin de la
+    // fonction
+    for (int i = 0; i < arg.length; i++) {
+        arg[i] = readInteger("Donne moi la prochaine valeur du tableau");
+    }
+}
+
+int recherche_valeur(int[] tab, int v, int seuil) {
+    // cette fonction prend en argument un tableau et un entier v et cherche v dans le tableau
+    // elle renvoit -1 si v pas trouvé dans le tableau
+    // ou un indice "pos" >=0 si v == tab[pos]
+    boolean b = false;
+    int pos = -1;
+    for (int i = 0; i < seuil && !b; i++) {
+        if (v == tab[i]) {
+            b = true;
+            pos = i;
+        }
+        // equivalent à : b = b || (v=tab[i]);
+    }
+    // soit b == false, alors valeur pas trouvée, donc pos == -1
+    // soit b == true, alors valeur à tab[i], donc pos >=0
+    return pos;
+}
+
+int suppression(int[] tab, int pos, int seuil) {
+    // problème si void comme retour :
+    for (int i = pos; i < seuil - 1; i++) {
+        tab[i] = tab[i + 1];
+    }
+    return seuil - 1;
+    // tab[pos] = tab[pos+1]
+    // tab[pos+1] = tab[pos+2]
+    // tab[pos+2] = tab[pos+3]
+    // tab[pos+3] = tab[pos+4]
+    // ....
+}

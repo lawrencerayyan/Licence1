@@ -1,0 +1,29 @@
+void dessinerPlusieurs(int n){
+    for (int i = 0; i < n; i++) {
+        print("*");
+    }
+}
+
+void dessinerEspace(int j){
+    for (int r = 0; r < j; r++) {
+        print(" ");
+    }
+}
+
+void dessinerLigne(int j, int n){
+    dessinerEspace(j);
+    dessinerPlusieurs(n);
+    dessinerEspace(j);
+    println("");
+}
+
+void main() {
+    int taille = readInteger("Quel est la taille ?");
+    int nb_etoile = 1;
+    int nb_espace = (taille-1);
+    for (int y = 0; y < taille; y++) {
+        dessinerLigne(nb_espace,nb_etoile);
+        nb_etoile=nb_etoile+2;
+        nb_espace--;
+    }
+}

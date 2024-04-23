@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>damier grid</title>
+    <style>
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(var(--cols), 0fr);
+        grid-gap: 0px;
+    }
+    .grid * {
+        padding: 40px;
+    }
+    .grid > *:nth-child(odd) {
+        background-color: black;
+        color: white;
+    }
+
+    .grid > *:not(:nth-child(odd)) {
+        background-color: rgb(255, 255, 255);
+        border:1px solid black ;
+    }
+    </style>
+</head>
+<body>
+    <div class="grid" style="--cols: 5 ;">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+        <span>13</span>
+        <span>14</span>
+        <span>15</span>
+        <span>16</span>
+        <span>17</span>
+        <span>18</span>
+        <span>19</span>
+        <span>20</span>
+        <span>21</span>
+        <span>22</span>
+        <span>23</span>
+        <span>24</span>
+        <span>25</span>
+    </div>
+</body>
+</html>

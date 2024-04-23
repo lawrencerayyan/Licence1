@@ -1,0 +1,56 @@
+void main() {
+    int balleX;
+    int balleY;
+    int curseurX;
+    int curseurY;
+    int vitesseX;
+    int vitesseY;
+    int largeur;
+    int hauteur;
+    double temps;
+    balleX = 0;
+    balleY = 0;
+    curseurX = 0;
+    curseurY = 0;
+    vitesseX = 1;
+    vitesseY = 1;
+    largeur = 30;
+    hauteur = 10;
+    // temps = now();
+    clear();
+    while (true) {
+
+        if (balleX == curseurX && balleY == curseurY) {
+            print("X");
+        } else {
+            print(".");
+        }
+        curseurX = curseurX + 1;
+        if (curseurX == largeur) {
+            curseurX = 0;
+            curseurY = curseurY + 1;
+            println();
+            if (curseurY == hauteur) {
+                curseurY = 0;
+                balleX = balleX + vitesseX;
+                if (balleX == -1) {
+                    balleX = 1;
+                    vitesseX = 1;
+                } else if (balleX == largeur) {
+                    balleX = largeur - 2;
+                    vitesseX = -1;
+                }
+                balleY = balleY + vitesseY;
+                if (balleY == -1) {
+                    balleY = 1;
+                    vitesseY = 1;
+                } else if (balleY == hauteur) {
+                    balleY = hauteur - 2;
+                    vitesseY = -1;
+                }
+                sleep(100);
+                clear();
+            }
+        }
+    }
+}

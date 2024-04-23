@@ -1,0 +1,24 @@
+void main() {
+    int[] tab;
+    int y = readInteger("choisissez votre serie des nombres");
+    tab = new int[y];
+    for (int i = 0; i < y; i++) {
+        tab[i] = readInt("votre nombre " + i);
+        print("tab[");
+        print(i);
+        print("]=");
+        println(tab[i]);
+    }
+
+    boolean f = true;
+    for (int i = 0; i < tab.length / 2; i++) {
+        if (tab[i] != tab[tab.length - i - 1]) {
+            f = false;
+        }
+    }
+    if (f) {
+        println("c est un polindrome");
+    } else {
+        println("ce n est pas un polindrome");
+    }
+}

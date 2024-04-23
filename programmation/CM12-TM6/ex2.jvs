@@ -1,0 +1,26 @@
+void main() {
+    int n = readInteger("donner un nombre N : ");
+    int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+    }
+    
+    
+    println(sommeMultiple(tab , n));
+   
+}
+
+int sommeMultiple (int [] tab , int n){
+      
+    boolean reponse = false ;
+    int somme = 0 ;
+    for (int i = 0; i < tab.length; i++) {
+        if ((i%n)== 0){
+            somme = somme + tab[i] ;
+            //println(tab[i]);
+        }
+    }
+    return somme;
+}

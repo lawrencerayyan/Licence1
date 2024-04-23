@@ -1,0 +1,16 @@
+String remplaceLettre(String s, String a_renplacer,String remplace_par){
+    String modif = "";
+    for (int i = 0; i < stringLength(s); i++) {
+        if(equal(stringNth(s,i), a_renplacer)){
+            modif = modif + remplace_par;
+        } else {
+            modif = modif + stringNth(s,i);
+        }
+    }
+    return modif;
+}
+
+void main() {
+    String s = "japan";
+    println(remplaceLettre(s,"a","e"));
+}

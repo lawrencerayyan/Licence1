@@ -1,0 +1,63 @@
+void augmente2(int[] tab){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = tab[i] + 2;
+    }
+}
+
+void augmente(int[] tab, int n){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = tab[i] + n;
+    }
+}
+
+void echange(int[] tab, int i, int j){
+    int valeur_a_changer = tab[i];
+    tab[i] = tab[j];
+    tab[j] = valeur_a_changer;
+}
+
+void rotation(int[] tab) {
+    int valeur_a_changer = tab[0];
+    for (int u = 0; u < tab.length-1; u++) {
+        tab[u] = tab[u+1];
+    }
+    tab[tab.length-1] = valeur_a_changer;
+}
+
+void remplissage(int[] source1, int[] source2, int[] target){
+    if((source1.length + source2.length)<=target.length) {
+        for (int r = 0; r < source1.length; r++) {
+            target[r] = source1[r];
+        }
+        for (int t = 0; t < source2.length; t++) {
+            target[t + source1.length] = source2[t];
+        }
+    } else if (source1.length<target.length){
+        for (int u = 0; u < source1.length; u++) {
+            target[u] = source1[u];
+        }
+        for (int d = 0; d < (target.length-source1.length); d++) {
+            target[d + (source1.length)] = source2[d];
+        }
+    } else {
+        for (int e = 0; e < target.length; e++) {
+            target[e] = source1[e];
+        }
+    }
+}
+
+void main() {
+    int[] tab = new int[readInteger("Quel est la taille 1")];
+    int[] tab2 = new int[readInteger("Quel est la taille 2")];
+    int[] tab3 = new int[readInteger("Quel est la taille 3")];
+    for (int y = 0; y < tab.length; y++) {
+        tab[y] = readInteger("entrez une valeur");
+    }
+    for (int m = 0; m < tab2.length; m++) {
+        tab2[m] = readInteger("entrez une valeur");
+    }
+    remplissage(tab,tab2,tab3);
+    for (int o = 0; o < tab3.length; o++) {
+        println(tab3[o]);
+    }
+}

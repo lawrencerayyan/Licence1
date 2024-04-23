@@ -1,0 +1,51 @@
+void main() {
+    String telephone1;
+    String telephone2;
+    String telephone3;
+    telephone1 = "";
+    telephone2 = "";
+    telephone3 = "";
+    String menu;
+    menu = "";
+    while (!equal(menu, "Q")) {
+        menu = readString("(Q)uitter (C)onsulter (M)odifier ?");
+        if (equal(menu, "C")) {
+            // Consultation
+            int n;
+            n = readInt("Quelle mémoire ?");
+            if (n >= 1 && n <= 3) {
+                print("Contenu de la mémoire ");
+                print(n);
+                print(": ");
+                if (n == 1) {
+                    println(telephone1);
+                } else if (n == 2) {
+                    println(telephone2);
+                } else {
+                    println(telephone3);
+                }
+            } else {
+                println("Erreur, votre valeur doit etre entre 1 et 3");
+            }
+        } else if (equal(menu, "M")) {
+            // Modification
+            int n;
+            n = readInt("Quelle mémoire? ");
+            if (n >= 1 && n <= 3) {
+                String tel;
+                tel = readString("Numéro de téléphone ?");
+                if (n == 1) {
+                    telephone1 = tel;
+                } else if (n == 2) {
+                    telephone2 = tel;
+                } else {
+                    telephone3 = tel;
+                }
+            } else {
+                println("Erreur, votre valeur doit être entre 1 et 3");
+            }
+        } else if (!equal(menu, "Q")) {
+            println("Erreur, action inexistante");
+        }
+    }
+}

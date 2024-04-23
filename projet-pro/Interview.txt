@@ -1,0 +1,53 @@
+1.	En quoi consiste le métier de pentester ?
+
+Le job de pentester consiste à chercher des vulnérabilités sur des sites web/applications/réseaux pour des entreprises clientes. 
+Il s'agit de sécurité offensive, on se met à la place d'un "attaquant" pour tenter de compromettre le serveur cible, d'usurper la session d'un utilisateur, 
+d'un admin, d'uploader des fichiers malveillants, de contourner les protections, etc... 
+L'objectif est ensuite de remettre un rapport (et de faire une restitution) sur toutes les vulnérabilités détectées afin qu'ils puissent corriger en interne avec ses équipes (dev), 
+et ainsi se prémunir de "vraies" cyberattaques. 
+___________________________________________________________________________________________
+2.	Quelles études avez-vous fait ?
+
+J'ai fait une classe prépa scientifique, puis une école d'ingé en électronique et enfin un mastère spécialisé en sécurité des systèmes d'information dans une seconde école d'ingénieur. 
+Mais le parcours "classique" est bien souvent une école d'informatique avec une spécialisation en cybersécurité. 
+
+___________________________________________________________________________________________
+3.	Quelle est votre journée type ?
+
+Cela dépend des missions, il n'y a pas réellement de journée type. Mais comme à présent j'ai quelques année d'expérience, 
+dans mes journées bien souvent j'alterne entre chefferie de projets (pilotage de mission, réunions et management d'équipe) et du delivery (donc de l'audit technique, pentest). 
+
+___________________________________________________________________________________________
+4.	Quelle est la différence entre le faire en freelance ou en entreprise ?
+
+En tant que freelance il y a également à gérer toute la partie commerciale, trouver des clients, se faire connaître, etc. 
+Pour ma part je trouve que travailler dans une entreprise est plus "stable", notamment en terme de salaire, de vacances, cotisation retraite et mutuelle et moins chronophage également. 
+___________________________________________________________________________________________
+5.	Quelles difficultés avez-vous rencontrées quand vous avez débuté ?
+
+Je dirais l'adaptation au métier, les missions sont quand différentes de ce que l'on peut trouver en "ctf" (capture the flag). 
+Il y a également les autres phases de la mission que je découvrais : qualification avec le client (besoin, cdg, prérequis), la rédaction du rapport et la restitution finale. 
+____________________________________________________________________________________________
+6.	Quel est le salaire mensuel approximativement ?
+
+Dans la région parisienne un pentester peut espérer un salaire de 38-40K annuel à ses débuts, cela peut augmenter par la suite en fonction de son expérience et de ses responsabilités. 
+_______________________________________________________________________________________________
+7.	Quels sont les avantages et les inconvénients du métier ?
+
+Avantages : le fait de toujours apprendre, il n'y a pas de monotonie dans ce métier. 
+La stimulation intellectuelle, l'émulation avec les collègues et l'aspect "challenge" des missions. Le télétravail et les horaires qui sont assez libres.
+Inconvénient :  Certaines missions sont bp moins intéressantes que d'autres, notamment lorsqu'il s'agit d'environnement sécurisé et que nous ne trouvons pas grand chose...
+__________________________________________________________________________________________________
+8.	Comment se passe un audit ?
+
+Il y a plusieurs phases : proposition commerciale, qualification des besoins, kickoff (présentation aux client de la méthodologie, et des prérequis nécessaires : compte d'accès, ...), 
+audit technique, rédaction du livrable, restitution 
+_______________________________________________________________________________________________
+9.	Quelles sont les failles les plus fréquentes ?
+
+C'est que l'on appelle le TOP 10 OWASP (mauvais contrôle d'accès, injections, XSS, mauvaises configurations, ...)
+__________________________________________________________________________________________________________
+10.	Quelle est votre pire peur / expérience dans ce métier ?
+
+Les missions vont grandement dépendre du relationnel avec les clients, donc en fonction des attentes et du caractère cela peut assez mal se passer. 
+

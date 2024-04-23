@@ -1,0 +1,103 @@
+// void main() {
+//     int [] tab = new int []{9,2,5,3,6,4,1,7,8,10};
+//     TriSelection(tab); 
+//     affichage(tab);
+// }
+
+// void affichage(int [] tab){
+//     for (int i = 0; i <tab.length; i++) {
+//         print(tab[i]+" ");
+//     }
+//     println("");
+// }
+
+// int max (int  []tab , int  i){
+//     int res = 0 ;
+//     for (int j= 0; j<i; j++) {
+//         if (tab[res]<tab[j]) res = j ;
+//     }
+//     return res ;
+// }
+
+
+// void echange ( int [] tab , int i , int j){
+//     int temp = tab[i];
+//     tab[i]=tab[j];
+//     tab[j]=temp ;
+// }
+
+// void TriSelection (int [] tab ){
+//     int seuil = tab.length;
+//     int c ; 
+//     while(seuil > 0) {
+//         c= max (tab, seuil);
+//         echange(tab, c , seuil-1);
+//         seuil--;
+//     }
+// }
+
+
+void randomfille( int [] tab){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = (int) (100 * tab.length * random());
+    }
+} 
+
+void affichage(int [] tab ){
+    for (int i = 0; i < tab.length; i++) {
+        print(tab[i] +" ");
+    }
+    println("");
+}
+
+void echange ( int [] tab , int i , int j){
+    int temp = tab [i];
+    tab[i]=tab[j];
+    tab[j]= temp ;
+}
+
+void bubble (int [] tab) {
+    int pass = 0 ;
+    boolean verfi= true ;
+    for (int j =tab.length-1 ; j >=0; j--) {
+        verfi = false ;
+        for (int i = 0; i < j; i++) {
+            pass = pass + 1 ;
+            if (tab[i]>tab[i+1]){
+                echange(tab, i , i+1);
+                verfi=true ;
+            }
+        }
+    }
+}
+
+void bubble(int[] tab){
+    int pass= 0 ;
+    boolean verf = true ;
+    for (int j = tab.length-1 ; j >= 0 ; j--) {
+        verf = false;
+        for (int i = 0; i < j; i++) {
+            pass = pass + 1 ;
+            if(tab[i]>tab[i+1]) {
+                echange(tab , i , i+1);
+                verf=true; 
+            }
+        }
+    }
+    
+}
+void main() {
+    clear();
+    int n =1 ;
+    while(n>0) {
+        n = readInteger("quelle est la taille de tableu");
+        int [] tab = new int [n];
+        randomfille(tab);
+        // affichage(tab);
+        long debut = System.currentTimeMillis();
+        bubble(tab);
+        long fin = System.currentTimeMillis();
+        long res = fin - debut;
+        println(res); 
+    }
+}

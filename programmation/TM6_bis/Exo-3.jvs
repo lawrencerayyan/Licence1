@@ -1,0 +1,55 @@
+void augmente2(int[] tab){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = tab[i]+2;
+    }
+}
+
+void augmente(int[] tab, int n){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = tab[i]+n;
+    }
+}
+
+void echange(int[] tab, int i, int j){
+    int stockage = tab[i];
+    tab[i] = tab[j];
+    tab[j] = stockage;
+}
+
+void rotation(int[] tab){
+    if(tab.length > 0) {
+        int stockage = tab[tab.length-1];
+        for (int i = 1; i < tab.length; i++) {
+            tab[tab.length-i] = tab[tab.length-(i+1)];            
+        }
+    tab[0] = stockage;
+    }
+}
+
+void remplissage(int[] source1, int[] source2, int[] target){
+    if (target.length>=(source1.length+source2.length)){
+        for (int i = 0; i < source1.length; i++) {
+            target[i] = source1[i];
+        }
+        for (int y = 0; y < source2.length; y++) {
+            target[source1.length+y] = source2[y];
+        }
+        for (int z = (source1.length+source2.length); z < target.length; z++) {
+            target[z] = 0;
+        }
+    } else if(target.length>=source1.length){
+        for (int i = 0; i < source1.length; i++) {
+            target[i] = source1[i];
+        }
+        for (int y = 0; y < (target.length-source1.length); y++) {
+            target[source1.length+y] = source2[y];
+        }
+    } else {
+        for (int y = 0; y < target.length; y++) {
+            target[y] = source1[y];
+        }
+    }
+}
+
+void main() {
+}

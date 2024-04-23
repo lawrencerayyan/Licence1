@@ -1,0 +1,89 @@
+void main(){
+    println("");
+    //6 espace
+    println("      *");
+    sleep(1000);
+    clear();
+    println("      .     ");
+    println("      *     ");
+    println("      ~     ");
+    sleep(1000);
+    clear();
+    println("  ,    .  ");
+    println("( .  * . )");
+    println("  `    '  ");
+    sleep(1000);
+    clear();
+    
+    println(" ,     .  ");
+    println("[*  -  *]");
+    println("*       *");
+    println(" .    . ");
+    println("[*  -  *]");
+    println(" `     '  ");
+    sleep(1000);
+    clear();
+    
+    println(".   ***    .");
+    println("[ *     *  ]");
+    println("[          ]");
+    println("[ *     *  ]");
+    println("`   ***    '");
+    sleep(1000);
+    clear();
+    
+    println(".   *-*    .");
+    println("| *  .  *  ]");
+    println("[          *");
+    println("[ *  .  *  |");
+    println("'   ***    '");
+    sleep(1000);
+    clear();
+   
+    println(".   *-*    .");
+    println("| '        *");
+    println("*          |");
+    println("*   . .    |");
+    println("'   _**    '");
+    sleep(1000);
+    clear();
+    
+    println(".  - -*    .");
+    println("| '        |");
+    println("*          |");
+    println("*   . .    |");
+    println("'  _ _ _   '");
+    sleep(1000);
+    clear();
+    
+    println(".  - - -   .");
+    println("| '        |");
+    println("*          |");
+    println("|   . .    |");
+    println("'  _ _ _   '");
+    sleep(1000);
+    clear();
+    int x = random(1,6);
+    
+    println(".  - - -   .");
+    print("|    ");
+    print(x);
+    println("     |");
+    println("|          |");
+    print("|    ");
+    print(x);
+    println("     |");
+    println("'  _ _ _   '");
+    sleep(1000);
+    
+
+
+
+
+
+
+
+
+
+
+}

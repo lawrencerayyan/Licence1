@@ -1,0 +1,4 @@
+void main() {
+    int x = readInteger("taille");
+    boolean tab [][] = new boolean[x][x];
+}

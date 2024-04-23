@@ -1,0 +1,23 @@
+int somme_tableau(int [] tab1 , int [] tab2){
+    int som = 0 ;
+    int som2 = 0 ;
+    int som3 = 0 ;
+for (int i = 0; i < tab1.length; i++) { 
+    som = som + tab1;
+}
+for (int j = 0; j < tab2.length; j++) {
+    som2 = som2 + tab2 ;
+}
+if(tab1.length == tab2.length){
+    som3 = som1 + som2 ;
+    return som ;
+}else {
+    return som3= 0 ;
+}
+
+
+}
+
+void main() {
+    
+}

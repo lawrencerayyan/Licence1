@@ -1,0 +1,16 @@
+void main() {
+    int x = -1;
+    int y = readInteger("Quel est votre y ?");
+    for (int u = 0; u < y; u++) {
+        x++;
+        sleep(500);
+        clear();
+        for (int i = 0; i < y; i++) {
+            if (i != x) {
+                print("-");
+            } else {
+                print("|");
+            }
+        }
+    }
+}

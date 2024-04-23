@@ -1,0 +1,34 @@
+void main() {
+    int n = readInteger("Quel est la valeur de n (n = implaire) ?");
+    int prem = 0;
+    int dernier = n - 1;
+    for (int i = 0; i < n; i++) {
+        for (int u = 0; u < n; u++) {
+            if (prem == u && prem == i) {
+                print("X");
+                prem++;
+                if (dernier == u) {
+                    dernier--;
+                }
+            } else if (dernier == u) {
+                print("X");
+                dernier--;
+            } else {
+                print(" ");
+            }
+        }
+        println("");
+    }
+}
+/*if(point== i && point ==j){
+               print("X");
+               point++;
+               if(der == j){
+                   der--;
+               }
+           }else if(der == j){
+               print("X");
+               der--;
+           }else{
+               print(" ");
+           }*/

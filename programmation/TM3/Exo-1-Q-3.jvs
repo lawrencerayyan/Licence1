@@ -1,0 +1,12 @@
+void main() {
+    int nb_fois;
+    double nb = 0;
+    double moy = 0;
+    nb_fois = readInteger("Combien de tour ?");
+    for (int i = 0; i < nb_fois; i++) {
+        nb = nb + readInteger("Quel est votre chiffre ?");
+    }
+    println("La somme est " + nb);
+    moy = nb / nb_fois;
+    println("La moyenne est de " + moy);
+}

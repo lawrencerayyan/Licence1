@@ -1,0 +1,11 @@
+-- 1
+SELECT titre_film , realisateur FROM film1 WHERE genre = "policiers" AND titre_film like '%voleur%' AND annee_sortie> 2008 ;
+-- 2
+SELECT titre_film , COUNT(date_emprunt) FROM film1 WHERE COUNT(date_emprunt)<7 ;
+-- 3
+SELECT studios ,COUNT(titre_film) FROM film1 GROUP BY studios;
+-- 4
+SELECT genre ,AVG(date_emprunt) FROM film1 GROUP BY genre;
+-- 5
+SELECT titre_film , annee_sortie FROM film1 WHERE date_retour= '04/11/2021';
+

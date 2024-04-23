@@ -1,0 +1,21 @@
+void main() {
+    int nb = readInt("Quel taille fait votre chaine ?");
+    int[] tableau = new int[nb];
+    int i;
+    int stockage;
+    for (int u = 0; u < nb; u++) {
+        tableau[u] = readInteger("Quel est votre chiffre ?");
+        println(tableau[u]+ " ");
+    }
+    i = readInteger("Quel est la valeur de i ?");
+    for (int o = 0; o < i; o++) {
+        stockage = tableau[(tableau.length) - 1];
+        for (int y = tableau.length - 1; y > 0; y--) {
+            tableau[y] = tableau[y - 1];
+        }
+        tableau[0] = stockage;
+    }
+    for (int t = 0; t < tableau.length; t++) {
+        println("tableau[" + t + "] = " + tableau[t]);
+    }
+}

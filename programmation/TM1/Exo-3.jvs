@@ -1,0 +1,58 @@
+void main() {
+    String yeux_droite;
+    String yeux_gauche;
+    String bouche;
+    String oreilles_droite;
+    String oreilles_gauche;
+    int chiffre_aleatoire;
+
+    chiffre_aleatoire = random(0, 3);
+
+    if (chiffre_aleatoire == 0) {
+        yeux_droite = "o";
+    } else if (chiffre_aleatoire == 1) {
+        yeux_droite = "*";
+    } else {
+        yeux_droite = "-";
+    }
+
+    chiffre_aleatoire = random(0, 3);
+
+    if (chiffre_aleatoire == 0) {
+        yeux_gauche = "o";
+    } else if (chiffre_aleatoire == 1) {
+        yeux_gauche = "*";
+    } else {
+        yeux_gauche = "-";
+    }
+
+    chiffre_aleatoire = random(0, 2);
+
+    if (chiffre_aleatoire == 0) {
+        bouche = "_";
+    } else {
+        bouche = ".";
+    }
+
+    chiffre_aleatoire = random(0, 2);
+
+    if (chiffre_aleatoire == 0) {
+        oreilles_droite = ")";
+    } else {
+        oreilles_droite = ")@";
+    }
+
+    chiffre_aleatoire = random(0, 2);
+
+    if (chiffre_aleatoire == 0) {
+        oreilles_gauche = "(";
+    } else {
+        oreilles_gauche = "@(";
+    }
+
+    print(oreilles_gauche);
+    print(yeux_gauche);
+    print(bouche);
+    print(yeux_droite);
+    println(oreilles_droite);
+}

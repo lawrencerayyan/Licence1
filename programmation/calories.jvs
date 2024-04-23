@@ -1,0 +1,82 @@
+void main() {
+   int x = readInteger("quel est votre sexe ? 1-Homme , 2-Femmme");
+   double calories = 0 ;
+   double poids = readDouble("quel est votre poids(KG) ?");
+   double taille = readDouble("quel est votre taille(cm)?");
+   double age = readDouble("quel est votre age ?");
+    println("1-vous ne faites pas spicealement de sport ou vous le faites peu" );
+       println ("2-vous faites de sports 1 à 3 fois par semaine" ); 
+       println("3-vous faites de sports 3 à 5 fois par semaine" );
+       println( "4- vous faites de sports 5 à 7 fois par semaine");
+       
+       int activite = readInteger("quel est votre type ?");
+       clear();
+   if(x==1) {
+       calories = (poids * 10) + (taille * 6.26) - (age * 5) + (5) ;
+       
+
+       
+       if(activite==1) {
+           calories = (calories * 1.25 );
+           println("calories = "+calories + "  Kcal");
+       } else if(activite==2) {
+           calories = calories * 1.375 ;
+           println("calories = "+calories + "  Kcal");
+       }else if (activite==3){
+           calories = calories * 1.550 ;
+           println("calories = "+calories + "  Kcal");
+       } else {
+           calories = calories * 1.725 ;
+           println("calories = "+calories + "  Kcal");
+       }
+        } 
+        else {
+             calories = (poids * 10) + (taille * 6.26) - (age * 5) - 161 ;
+             
+       if(activite==1) {
+           calories = calories * 1.25 ;
+           println("calories = "+calories + "  Kcal");
+       } else if(activite==2) {
+           calories = calories * 1.375 ;
+           println("calories = "+calories + "  Kcal");
+       }else if (activite==3){
+           calories = calories * 1.550 ;
+           println("calories = "+calories + "  Kcal");
+       } else {
+           calories = calories * 1.725 ;
+           println("calories = "+calories + "  Kcal");
+       }
+        }
+        double carb = 0 ;
+        if(activite == 1) {
+            carb = poids * 3 ;
+            println("carbs " + carb + "  g");
+        }else if (activite==2) {
+         carb=poids*6 ;  
+         println("carbs " + carb + "  g");
+        } else if(activite == 3) {
+            carb= poids*8;
+            println("carbs " + carb + "  g");
+        } else {
+            carb = poids * 10 ;
+            println("carbs " + carb + "  g");
+        }
+        double protien = 0 ;
+        if(activite == 1 || activite==2) {
+            protien = poids * 0.75 ;
+            println("protien " + protien + "  g");
+        
+        } else if(activite == 3) {
+            protien= poids*1.2;
+            println("protien " + protien + "  g");
+        } else {
+            protien= poids * 2 ;
+            println("protien " + protien + "  g");
+        }
+
+        double fat = readInteger("Qu'est ce que vous preferez de 20% à 30%") ;
+        fat = (fat * calories)/100 ;
+        fat = fat / 9 ;
+        println("fat " + fat + "  g");
+
+}

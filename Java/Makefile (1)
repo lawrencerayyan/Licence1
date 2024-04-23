@@ -1,0 +1,110 @@
+#
+# Linux makefile
+# Use with make 
+#
+
+.SUFFIXES:
+.SUFFIXES: .o .asm
+.PHONY: all
+
+PROGS=prog
+
+AS=nasm
+#AS=yasm
+ASFLAGS=  -gdwarf -f elf64
+#ASFLAGS=  -g dwarf2 -f elf64
+CFLAGS= -m64 -g 
+# pour les tableaux
+#CFLAGS= -m64 -g  -no-pie 
+CC=gcc  
+
+.asm.o:
+	$(AS) $(ASFLAGS) $*.asm
+
+all:  $(PROGS)
+
+%: %.o
+	$(CC) $(CFLAGS) -o$* $*.o
+
+clean :
+	rm -f $(PROGS)
+
+
+
+
+
+DEFAULT REL
+extern printf
+extern scanf
+segment .data 
+prompt1       db "Entrez un entier : ",0
+prompt2       db "Entrez un autre entier : ",0
+formatSortie1  db "le AND de deux entiers est : ",0
+formatSortie2  db "le OR de deux entiers est : ",0
+formatSortie3  db "le XOR est : ",0
+longIntFormat db "%ld",0
+newLine 	db 10,0
+; memoire globale donnees non initialisees
+segment .bss  
+entier1  resq 1
+entier2  resq 1
+resultat1 resq 1
+resultat2 resq 1
+resultat3 resq 1
+segment .text ; code du programme
+        global  main
+main:
+	push rbp
+    mov rbp,rsp
+	push rbx
+	push r12
+; appel print_string
+	lea rdi,[prompt1]
+	call print_string
+; appel read_int
+    lea rdi,[entier1]
+    call read_int
+	mov rbx,[entier1]
+; appel print_string
+    lea rdi,[prompt2]
+	call print_string
+; appel read_int
+    lea rdi,[entier2]
+	call   read_int 
+	mov rcx,[entier2]
+; calcul de la somme et sauvegarde du resultat en memoire
+	AND rbx,rcx
+	mov [resultat1],rbx
+	lea rdi , [formatSortie1]
+	call read_string
+	les rdi , [resultat1]
+	call printt_int
+	lea rdi , [Newline]
+	call print_string
+	
+
+	OR rbx,rcx
+	mov [resultat2],rbx
+	lea rdi , [formatSortie2]
+	call print_string
+	les rdi , [resultat2]
+	call print_int
+	lea rdi , [Newline]
+	call print_string
+
+	XOR rbx,rcx
+	mov [resultat3],rbx
+	lea rdi , [formatSortie3]
+	call print_string
+	les rdi , [resultat3]
+	call read_int
+	lea rdi , [Newline]
+	call print_string
+
+
+	pop r12
+	pop rbx
+	pop rbp
+; envoi de 0 au systeme d'exploitation
+        mov     rax, 0            
+        ret

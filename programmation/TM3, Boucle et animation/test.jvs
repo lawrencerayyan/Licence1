@@ -1,0 +1,78 @@
+/*void main() {
+    int x = readInt("entrez un nombre");
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < i; j++) {
+            print("-");
+        }
+        print("|");
+        // for (int j = i + 1; j < x; j++) {
+        for (int j = x + 1; j > i; j--) {
+            print("-");
+        }
+        println();
+    }
+}
+*/
+/*void main() // مثلث
+{
+    int x = readInt("nombre de ligne");
+    for (int i = 0; i < x; i++) {
+        // affiche un nombre(x - i - 1) de blancs
+        for (int j = 0; j < x - i - 1; j++) {
+            print(" ");
+        }
+        // affiche un  nombre( 2*i+1) de *
+        for (int j = 0; j < 2 * i + 1; j++) {
+            print("*");
+        }
+        println();
+    }
+}
+*/
+/* void main() {
+    int N = readInt("entre votre nombre:");
+    int y;
+    int count = 0;
+    int u = N;
+    while (u > 1) {
+        if (u % 2 == 0) {
+            print(u + "/2=");
+            u = u / 2;
+            println(u);
+        } else {
+            print(u + "*3+1=");
+            u = 3 * u + 1;
+            println(u);
+        }
+        count++;
+    }
+    println("verfiee apres :" + count + " essais");
+}*/
+void main() {
+    int delai;
+    delai = 500;
+    int cpt;
+    cpt = 0;
+    while (cpt <= 3) {
+        print(" Y");
+        sleep(delai);
+        clear();
+        print(" Y");
+        sleep(delai);
+        clear();
+        print(" Y");
+        sleep(delai);
+        clear();
+        print("Y");
+        sleep(delai);
+        clear();
+        print("Y o");
+        sleep(delai);
+        clear();
+        print("Y o");
+        sleep(delai);
+        clear();
+        print("Yo");
+        cpt = cpt + 1;
+    }
+}

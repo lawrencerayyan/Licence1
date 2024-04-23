@@ -1,0 +1,17 @@
+void main() {
+    String s1 = "ABCDEFGHIJK";
+    String s2 = readString("Donne moi un mot");
+    boolean test = equal(s1, s2);
+    int l = stringLength(s1);
+    String s3 = subString(s1, 3, 23);
+    println(s3);
+}
+
+// debut inclus, mais fin exclu
+String subString(String s, int debut, int fin) {
+    String resultat = "";
+    for (int i = debut; i < fin; i++) {
+        resultat = resultat + stringNth(s, i);
+    }
+    return resultat;
+}

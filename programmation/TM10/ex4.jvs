@@ -1,0 +1,14 @@
+class Article {
+String nom ;
+double prix ;
+}
+
+class Panier {
+Article [] article ;
+int nbArticles ;
+}
+
+void initialiserPanier ( Article [] article , int nbArticles ){
+    
+
+}

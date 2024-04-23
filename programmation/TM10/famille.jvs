@@ -1,0 +1,100 @@
+class Individu{
+    String nom ;
+    String prenom ;
+    Individu pere ;
+    Individu mere ;
+    
+}
+ void main() {
+     Individu[] p = creerFamilleSimpson();
+     afficherIndividu(p[6].nom);
+     
+    }
+ Individu [] creerFamilleSimpson (){
+     Individu[] p = new Individu [13];
+     
+    p[0] = new Individu ();
+     p[0].nom = "ibraham";
+     p[0].prenom= "Simpson";
+     p[0].pere = null ;
+     p[0].mere = null;
+     
+    p[1] = new Individu ();
+     p[1].nom = "Mona";
+     p[1].prenom= "olsen";
+     p[1].pere = null ;
+     p[1].mere = null ;
+     
+     p[2] = new Individu ();
+     p[2].nom = "Jacqueline ";
+     p[2].prenom= "Bouvier";
+     p[2].pere = null ;
+     p[2].mere = null ;
+     
+     p[3] = new Individu ();
+     p[3].nom = "Clancy";
+     p[3].prenom= "Bouvier";
+     p[3].pere =null ;
+     p[3].mere =null ;
+    
+    p[4] = new Individu ();
+     p[4].nom = "Herbert";
+     p[4].prenom= "Powell";
+     p[4].pere = p[0] ;
+     p[4].mere = p[1] ;
+    
+    p[5] = new Individu ();
+     p[5].nom = "Homer";
+     p[5].prenom= "Simpson";
+     p[5].pere = p[0]  ;
+     p[5].mere = p[1] ;
+    
+    p[6] = new Individu ();
+     p[6].nom = "Marge";
+     p[6].prenom= "Simpson";
+     p[6].pere = p[2] ;
+     p[6].mere = p[3] ;
+    
+    p[7] = new Individu ();
+     p[7].nom = "Patty";
+     p[7].prenom= "Bouvier";
+     p[7].pere = p[2] ;
+     p[7].mere = p[3] ;
+      
+     p[8] = new Individu ();
+     p[8].nom = "Selma";
+     p[8].prenom= "Bouvier";
+     p[8].pere = p[2] ;
+     p[8].mere = p[3] ;
+    
+     p[9] = new Individu ();
+     p[9].nom = "Bart";
+     p[9].prenom= "Simpson";
+     p[9].pere = p[5] ;
+     p[9].mere = p[6] ;
+    
+     p[10] = new Individu ();
+     p[10].nom = "Lisa";
+     p[10].prenom= "Simpson";
+     p[10].pere = p[5] ;
+     p[10].mere = p[6] ;
+    
+     p[11] = new Individu ();
+     p[11].nom = "Maggie";
+     p[11].prenom= "Simpson";
+     p[11].pere = p[5] ;
+     p[11].mere = p[6] ;
+
+     p[12] = new Individu ();
+     p[12].nom = "ling";
+     p[12].prenom= "Bouvier";
+     p[12].pere = p[8] ;
+     p[12].mere = null ;
+
+    return p ;
+ }
+  void afficherIndividu (Individu[] p , Individu pere){
+      for (int i = 0; i <13; i++) {
+          println(p[i].nom + " " + p[i].prenom +" " + p[i].pere.nom + " " + p[i].mere.nom);
+      }
+  }

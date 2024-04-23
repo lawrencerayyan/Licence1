@@ -1,0 +1,57 @@
+// boolean present(int x,int[] tab, int i, int j){
+// if (j<=i) return false ;
+//     if (tab[j-1]==x) return true ;
+//      return present(x,tab,i,j-1) }
+
+
+// boolean present( int [] tab , int x , int j){
+//     if(j-1> 0) {
+//         if ( tab [ j - 1 ] == x ){
+//             return true ; 
+//         }else { 
+//             return present (tab , x , j-1);
+//         }
+//     }
+//     return false ;
+// }
+
+// void mutli( int [] tab , int x , int j ){
+//     if(j > 0){
+//         tab [ j- 1 ] = tab [ j - 1] * x ;
+//         mutli(tab,x,j-1);
+//         print(tab[j - 1] + " ");
+//     }
+// }
+
+// boolean adjancentes ( int [] tab , int j){
+//     if (j > 0 ){
+//         if(tab[j]==tab[j+1]){
+//             return true;
+//         }else{
+//             return adjancentes ( tab , j-1);
+//         }
+//     }
+//     return false;
+// }
+
+boolean palindrome (int [] tab , int i , int j){
+    if(i != j){
+        int n = 0 ;
+        if (tab[i+n]== tab[j-1-n]){
+            n++;
+            return true;
+            
+        }else {
+            return palindrome (tab,i+n,j-1-n);
+        }
+    }
+    return false ;
+}
+
+void main() {
+    int[] tab = new int[] {1,2,3,4,5,6,7,8,9};
+    // print(present(tab,3,8));
+        // mutli(tab, 2 , 7);
+        // print(adjancentes(tab,5));
+        print(palindrome(tab,1,5));
+}

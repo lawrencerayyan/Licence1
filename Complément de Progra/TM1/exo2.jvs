@@ -1,0 +1,37 @@
+ void ligne (int n) {
+     if(n>0){
+     print("* ");
+     ligne(n - 1); 
+     }
+    //  hon 3mlna else mshan nnzl sa6r lta7t et mshan na3rf la condition d'arret  bs mo lazem na3mla toujours 
+     else {
+         println(""); 
+     }
+ }
+
+ void triangle (int n) {
+    
+     
+     if ( n > 0) {
+     triangle(n-1);
+     ligne(n);
+     }else {
+         
+     } 
+ }
+
+void tri(int n , int a ){
+    if ( a>=n){
+
+    }else {
+        ligne(a);
+        tri(n,a+1);
+        ligne(a);
+    }
+}
+
+ void main() {
+    //  ligne(5);
+    // triangle(10);
+    tri(5,1);
+ }

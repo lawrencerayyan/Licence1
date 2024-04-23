@@ -1,0 +1,14 @@
+void main() {
+    int b0 = 1, b1 = 1, b2 = 1, bi = 0, i = 0;
+    println("b0 = " + b0);
+    println("b1 = " + b1);
+    println("b2 = " + b2);
+    while (bi < 50000) {
+        bi = b0 + b1 + b2 + i;
+        println("b" + (i + 3) + " = " + bi);
+        b0 = b1;
+        b1 = b2;
+        b2 = bi;
+        i = ++i;
+    }
+}

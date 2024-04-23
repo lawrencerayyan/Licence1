@@ -1,0 +1,140 @@
+/* la premaire demande
+int somme_tableau(int[] arg) {
+    int somme = 0;
+    for (int i = 0; i < arg.length; i++) {
+        somme = somme + arg[i];
+    }
+    return somme;
+}
+
+void main() {
+    int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+    }
+    int s = 0;
+    s = somme_tableau(tab);
+    println("la somme des elements du tableau est " + s);
+}
+*/
+
+
+
+/* la 2 demande
+boolean appartient(int[] tab , int n) {
+    
+    boolean b = false; 
+    for (int i = 0; i < tab.length; i++) {
+     if( tab[i] == n){
+         b= true ;
+     }
+    }
+    return b ;
+}
+void main() {
+    int[] tab = new int[] {10, 20, 30, 50};
+    boolean s;
+     int n = readInteger("valeur à chercher dans le tableau");
+    s = appartient(tab, n);
+    println(s);
+}*/
+
+
+// boolean paire(int[] t) {
+//     boolean b = true;
+//     for (int i = 0; i < t.length; i++) {
+//         t[i] = 0;
+//     }
+//     while (b) {
+//         if (saisi) {
+//            t[saisi] = t[saisi] + 1;
+//             // println(liste[saisi]);
+//             for (int u = 0; u < t.length; u++) {
+//                 if (t[u] == 2) {
+//                     b = false;
+//                     print("Le chiffre " + u + " a ete taper 2 fois");
+//                 }
+//             }
+//         }
+//     }
+//         return b ;
+// }
+// void main() {
+//     int x = readInteger("la taille de tableau");
+//     int[] tab = new int[x];
+//     for (int i = 0; i < tab.length; i++) {
+//         tab[i] = readInteger("valeur :");
+//         println("tab[" + i + "]=" + tab[i]);
+//     }
+//     boolean s;
+//     s = t(tab);
+//     println(s);
+// }
+// la demande 3
+
+boolean paire(int tab[]) {
+    int isin = 2;
+    println();
+    
+    int valeur = tab[0];
+    int valeur2 = valeur;
+    boolean b= false;
+    for (int i = 1; i < tab.length; i++) {
+        if (valeur == tab[i]) {
+            isin = 1;
+          //  println("Le tableau contient 3paire");
+            b = true; 
+        } else {
+            isin = 0;
+            valeur++;
+        }
+    }
+    if (isin == 0) {
+        //println("Le tableau ne contient pas de paire");
+    }
+    return b ;
+}
+
+void main() {
+   int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+    }
+    boolean s ;
+    s = paire(tab);
+    println(s);
+}
+
+// la demande 4 
+/*
+boolean brelan(int tab[]){
+    
+    println();
+    
+    int valeur = tab[0];
+    boolean b= false;
+    for (int i = 0; i < tab.length; i++) {
+        if (valeur == tab[i]) {
+            b = true; 
+        } else {
+            valeur++;
+        }
+    }
+    return b ;
+
+}
+void main() {
+   int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+    }
+    boolean s ;
+    s = brelan(tab);
+    println(s);
+}*/

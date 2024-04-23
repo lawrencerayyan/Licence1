@@ -1,0 +1,35 @@
+void swap (int [] tab , int i , int j){
+    int temp = tab[i];
+    tab[i]=tab[j];
+    tab[j]=temp ;
+}
+
+void randomfill (int [] tab) {
+    for (int i = 0; i <tab.length; i++) {
+        tab[i]= (int) (100* tab.length * random());
+    }
+}
+
+void affichage( int[]tab){
+    for (int i = 0; i < tab.length; i++) {
+        print(tab[i] + " ");
+    }
+    println("");
+}
+
+void bubble ( int [] tab){
+
+    int pass = 0 ; 
+    boolean verf = true
+    for (int j = tab.length -1  ; j >= 0 ; j--) {
+        verf = false ;
+        for (int i = 0; i < j ; i++) {
+            pass = pass + 1 ;
+            if (tab[i]>tab[i+1]){
+                swap(tab , i , i+1);
+                verf = true;
+            }
+        }
+        n--;
+    }
+}

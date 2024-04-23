@@ -1,0 +1,84 @@
+class Personne{
+    String nom ; 
+    String prenom ;
+    int age ;
+    int taille ;
+}
+
+
+void main() {
+    Personne p = new Personne();
+    Personne p2 = new Personne();
+    saisirFichePerso(p,p2);
+    afficherFichePerso(p,p2);
+    plusGrand(p,p2);
+    Personne p3 = plusGrand(p,p2);
+    print(p3.taille);
+    estPlusJeune(p,p2);
+    println(estPlusJeune(p,p2));
+    
+    anniversaire(p);
+}
+void saisirFichePerso (Personne p, Personne p2){
+    p.nom=readString("NOM : ");
+    p.prenom=readString("PRENOM : ");
+    p.age=readInteger("VOTRE AGE : ");
+    p.taille=readInteger(" VOTRE TAILLE : ");
+     p2.nom=readString("NOM 2 : ");
+    p2.prenom=readString("PRENOM 2: ");
+    p2.age=readInteger("VOTRE AGE 2: ");
+    p2.taille=readInteger(" VOTRE TAILLE 2: ");
+}
+void afficherFichePerso (Personne p , Personne p2){
+    println("<----- Liste des Personnes ----->");
+    println("Le nom de cette personne est : "+ p.nom);
+    println("Le prenom de cette personne est : " + p.prenom);
+    println("Son age est : " + p.age);
+    println("Sa taille est : " + p.taille);
+    println("");
+    println("Le nom de cette personne est : "+ p2.nom);
+    println("Le prenom de cette personne est : " + p2.prenom);
+    println("Son age est : " + p2.age);
+    println("Sa taille est : " + p2.taille);
+}
+void anniversaire (Personne p){
+    p.age= p.age + 1 ;
+    //println("la nouvelle age de cette perssone est : "+ p.age);
+}
+Personne plusGrand (Personne p , Personne p2){
+    if (p.taille > p2.taille){
+        return p ;
+    }else {
+        return p2 ;
+    }
+}
+
+boolean estPlusJeune (Personne p , Personne p2){
+    if (p.age < p2.age){
+        return true ;
+    }else {
+        return false ;
+    }
+}
+
+int agesPersonnes (Personne [] p){
+    int moyenne = 0 ;
+    if(p.length>0){ 
+    for (int i = 0; i < p.length; i++) {
+        moyenne = p[i].age + moyenne ;
+    }
+    moyenne = moyenne / p.length ;
+    return moyenne ;}
+    else {
+        return 0 ;
+    }
+}
+
+Personne trouvePersonne ( Personne [] p , String nom){
+    for (int i = 0; i < p.length; i++) {
+        if(equal(p[i].nom,nom)) {
+            return p[i];    
+        }
+    }
+    return null;
+}

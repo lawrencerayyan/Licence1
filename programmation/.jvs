@@ -1,0 +1,11 @@
+void main() {
+    int [] montab = {3,5,7,8};
+    int somme = sommer_tableau (montab);
+}
+int sommer_tableau(int [] tab ){
+    int som = 0 ; 
+    for (int i = 0; i < tab.length; i++) {
+        som= som + tab[i];
+    }
+    return som ;
+}

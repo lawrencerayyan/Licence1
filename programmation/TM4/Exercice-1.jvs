@@ -1,0 +1,7 @@
+void main() {
+    String[] tab = new String[5];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readString("Entrez votre phrase");
+    }
+    print(tab[random(0, 5)]);
+}

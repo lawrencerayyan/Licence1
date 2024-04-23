@@ -1,0 +1,53 @@
+void affichage(int[] tab) {
+    for (int i = 0; i < tab.length; i++) {
+        println("les valeur dans le tableau sont [" + i + "]=" + tab[i]);
+    }
+    
+}
+void remplissage(int [] tab){
+    for (int i = 0; i < tab.length; i++) {
+        tab[i]= readInteger("valeur de " + i + " =");
+    }
+}
+int somme(int [] tab ){
+    int som = 0 ;
+    for (int i = 0; i < tab.length; i++) {
+        som= tab[i]+ som ;
+    }
+    return som ;
+}
+int recherche_valeur (int [] tab  ){
+    int v= readInteger("quelle valeur cherchez vous ?");
+boolean b = false ;
+int pos = -1 ;
+for (int i = 0; i < tab.length; i++) {
+    if(v == tab[i]) {
+        b = true ;
+        pos = i ;
+        
+    }
+    
+    
+}println("valeur a ete trouver dans la position : ");
+return pos ;
+}
+int suppression(int [] tab , int pos , int seuil){
+    for (int i = pos; i < seuil - 1; i++) {
+        tab[i]= tab[i + 1];
+    }
+    return seuil - 1 ;
+}
+void main() {
+    int g = 0;
+    
+    int s = 0;
+    int x = readInteger("quelle est la taille de votre tableau ?"); 
+    int seuil = readInteger("partie utile de tableau");
+    int[] tab = new int[x];
+    remplissage(tab , seuil);
+    affichage(tab);
+    s= somme(tab);
+    println(s);
+    g = recherche_valeur(tab);
+    println(g);
+}

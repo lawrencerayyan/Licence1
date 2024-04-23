@@ -1,0 +1,78 @@
+void main() {
+
+    int de1 = readInt("Choisisssez la valeur de premier de:");
+    while (!(de1 >= 1 && de1 <= 6)) {
+        de1 = readInt("valeur du de1 (Merci d'entrer une valeur correcte) :");
+    }
+    int de2 = readInt("Choisisssez la valeur de deuxieme de:");
+    while (!(de2 >= 1 && de2 <= 6)) {
+        de2 = readInt("valeur du de2 (Merci d'entrer une valeur correcte) :");
+    }
+    int de3 = readInt("Choisisssez la valeur de troisieme de:");
+    while (!(de3 >= 1 && de3 <= 6)) {
+        de3 = readInt("valeur du de3 (Merci d'entrer une valeur correcte) :");
+    }
+    int deMinimum = 0;
+    int deMaximum = 0;
+    int deIntermediaire = 0;
+
+    if (de1 < de2 && de1 < de3) {
+        deMinimum = de1;
+    } else if (de2 < de1 && de2 < de3) {
+        deMinimum = de2;
+    } else if (de3 < de2 && de3 < de1) {
+        deMinimum = de3;
+    }
+    if (de1 > de2 && de1 > de3) {
+        deMaximum = de1;
+    } else if (de2 > de1 && de2 > de3) {
+        deMaximum = de2;
+    } else if (de3 > de2 && de3 > de1) {
+        deMaximum = de3;
+    }
+    if (de1 < deMaximum && de1 > deMinimum) {
+        deIntermediaire = de1;
+    } else if (de2 < deMaximum && de2 > deMinimum) {
+        deIntermediaire = de2;
+    } else if (de3 < deMaximum && de3 > deMinimum) {
+        deIntermediaire = de3;
+    }
+
+    if (de1 == de2 && de2 == de3 && de3 != 1) {
+        print("Brelan et vous avez gagne :");
+        print(de1);
+        println(" points");
+    } else if (de1 == de2 && de2 == de3 && de3 == 1) {
+        print("Brelan et vous avez gagne : 7 points");
+
+    } else if (de1 == de3 && de1 == 1 && de2 != 1) {
+        print("Vous avez gagnez : ");
+        print(de2);
+        println(" points");
+    } else if (de2 == de3 && de2 == 1 && de1 != 1) {
+        print("Vous avez gagnez : ");
+        print(de1);
+        println(" points");
+    } else if (de1 == de2 && de3 != 1) {
+        print("Vous avez gagnez : ");
+        print(de3);
+        println(" points");
+    }
+    if (de1 == 1 && de2 == 2 && de3 == 4) {
+        print("Vous avez gagne : 11 points ");
+    } else if (de1 == 2 && de2 == 1 && de3 == 4) {
+        print("Vous avez gagne : 11 points ");
+    } else if (de1 == 2 && de2 == 1 && de3 == 1) {
+        print("Vous avez gagne : 11 points ");
+    } else if (de1 == 2 && de2 == 4 && de3 == 1) {
+        print("Vous avez gagne : 11 points ");
+    } else if (de1 == 4 && de2 == 2 && de3 == 1) {
+        print("Vous avez gagne : 11 points ");
+    } else if (de1 == 4 && de2 == 1 && de3 == 2) {
+        print("Vous avez gagne : 11 points ");
+    }
+
+    if (deMinimum + 1 == deIntermediaire && deIntermediaire == deMaximum - 1) {
+        print(" Tierce et vous avez gagnez 2 points");
+    }
+}

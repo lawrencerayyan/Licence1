@@ -1,0 +1,32 @@
+void main() {
+    int seuil = readInteger("quel est le taille du mot");
+    String[][] mot = new String[seuil][seuil];
+    int erreur = 0;
+    boolean valider;
+    boolean reussite = true;
+    String lettre;
+    for (int i = 0; i < seuil; i++) {
+        mot[i] = readString("Entrez votre mot lettre par lettre");
+        mot[i][0] = "-";
+    }
+    while(erreur <= 5 && reussite) {
+        for (int u = 0; u < seuil; u++) {
+            print(mot[u][0] + " ");
+        }
+        lettre = readString("Entrez une lettre");
+        valider = true;
+        for (int t = 0; t < seuil; t++) {
+            if (equal(lettre,mot[0])) {
+                valider = false;
+            }    
+        }
+        if(valider) {
+            erreur++;
+        }
+    }
+    if(erreur <= 5) {
+        print("Vous avez gagné");
+    } else {
+        print("Vous avez perdu");
+    }
+}

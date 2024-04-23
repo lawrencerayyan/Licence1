@@ -1,0 +1,58 @@
+int sommeMultiple(int[] t,int n) {
+    int somme = 0;
+    for (int i = 0; i < t.length; i++) {
+        if((i%n) == 0) {
+            somme = somme + t[i];
+        }
+    }
+    return somme;
+}
+
+int[] tabMultiple(int[] t,int n) {
+    int[] tab = new int[(t.length/n)+1];
+    int longueur = 0;
+    for (int i = 0; i < t.length; i = i + n) {
+        tab[longueur] = t[i];
+        longueur++;
+    }
+    return tab;
+}
+
+int[] tabHasard(int n,int h) {
+    int[] tab = new int[n];
+    int nb_hazard;
+    int indice = 0;
+    boolean present;
+    while(indice<tab.length) {
+        present = false;
+        nb_hazard = random(0,h);
+        for (int z = 0; z < tab.length; z++) {
+            if(tab[z] == nb_hazard) {
+                present = true;
+            }
+        }
+        if(!present) {
+            tab[indice] = nb_hazard;
+            indice++;
+        }
+    }
+
+    return tab;
+}
+
+int sommeHasard(int[] t,int n) {
+    int somme = 0;
+    for (int i = 0; i < n; i++) {
+        somme = somme + t[random(0,t.length-1)];
+    }
+    return somme;
+}
+
+void main() {
+    int[] t = new int[] {1,2,3,4,5,6,7,8,9};
+    /*int[] tab = tabHasard(5,8);
+    for (int i = 0; i < tab.length; i++) {
+        println(tab[i]);
+    }*/
+    println(sommeHasard(t,5));
+}

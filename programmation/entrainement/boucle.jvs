@@ -1,0 +1,11 @@
+void main() {
+    int n = readInt("entrez votre n");
+    for (int i = 0; i < n; i++) {
+        print("*");
+        for (int j = 0; j < 7; j++) {
+            print("0");
+            println();
+            
+        }
+    }
+}

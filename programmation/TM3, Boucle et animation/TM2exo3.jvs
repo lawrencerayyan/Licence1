@@ -1,0 +1,23 @@
+void main() {
+    int x = readInt("donnez un nombre:");
+    int y = 0;
+    while (y < 10) {
+        print(y);
+        print("    ");
+        print("x   ");
+        print(x);
+        print("=");
+        println(x * y);
+        y++;
+    }
+    int y1 = 10;
+    while (y1 < 13) {
+        print(y1);
+        print("   ");
+        print("x   ");
+        print(x);
+        print("=");
+        println(x * y1);
+        y1++;
+    }
+}

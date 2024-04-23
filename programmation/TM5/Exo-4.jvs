@@ -1,0 +1,68 @@
+void main() {
+    int taille = readInteger("Quel est la taille ?");
+    String[][] tab = new String[taille][taille];
+    int nb_espace = taille/2;
+    int nb_x = 1;
+    boolean reverse = false;
+    for (int i = 0; i < tab.length; i++) {
+        for (int z = 0; z < nb_espace; z++) {
+            tab[i][z] = " ";
+        }
+        for (int h = 0; h < nb_x; h++) {
+            tab[i][h+nb_espace] = "X";
+        }
+        for (int u = 0; u < nb_x; u++) {
+            tab[i][u+nb_espace+nb_x] = " ";
+        }
+    }
+
+    if(nb_espace==0) {
+        reverse=true;
+    }
+    if(reverse) {
+        nb_x = nb_x - 2;
+        nb_espace = nb_espace + 2;
+    } else {
+        nb_x = nb_x + 2;
+        nb_espace = nb_espace - 2;
+    }
+
+    for (int r = 0; r < tab.length; r++) {
+        for (int t = 0; t < tab[r].length; t++) {
+            print(tab[r][t]);
+        }
+    println("");
+    }
+}
+
+
+
+
+
+
+
+
+
+/*void main() {
+    int nb = 5;
+    String tab[][] = new String[nb][nb];
+    int espace = nb / 2;
+    int x = 1;
+    for (int i = 0; i < nb; i++) {
+        for (int u = 0; u < espace; u++) {
+            tab[i][u] = " ";
+        }
+        for (int r = 1; r < x + 1; r++) {
+            tab[i][espace + r] = "X";
+        }
+        for (int t = 0; t < (espace + t + x); t++) {
+            tab[i][(espace + x + t)] = " ";
+        }
+    }
+    for (int p = 0; p < tab.length; p++) {
+        for (int q = 0; q < tab[p].length; q++) {
+            print(tab[p][q]);
+        }
+        println("");
+    }
+}*/

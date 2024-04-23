@@ -1,0 +1,44 @@
+void main() {
+    int point_j1 = 0, point_j2 = 0;
+    int j1de1 = 0, j1de2 = 0, j1de3 = 0, j2de1 = 0, j2de2 = 0, j2de3 = 0;
+    while (point_j1 < 14 && point_j2 < 14) {
+        j1de1 = random(1, 7);
+        j1de2 = random(1, 7);
+        j1de3 = random(1, 7);
+        j2de1 = random(1, 7);
+        j2de2 = random(1, 7);
+        j2de3 = random(1, 7);
+
+        if (prem_de > sec_de) {
+        de_stockage = prem_de;
+        prem_de = sec_de;
+        sec_de = de_stockage;
+    }
+    if (trois_de < sec_de) {
+        de_stockage = trois_de;
+        trois_de = sec_de;
+        sec_de = de_stockage;
+    }
+    if (prem_de > sec_de) {
+        de_stockage = prem_de;
+        prem_de = sec_de;
+        sec_de = de_stockage;
+    }
+
+    if(prem_de==sec_de && prem_de==trois_de && prem_de == 1) {
+        println("Vous avez fait un Brelan et cela vaut 7 points")
+    }
+
+    if(prem_de==sec_de && prem_de==1 && prem_de != trois_de){
+        println("Vous avez une paire qui vaut la valeur du de different de 1")
+    }
+    if(prem_de == 1 && sec_de == 2 && trois_de ==4){
+        println('vous avez fait un 421 cela vaut 11 points')
+    }
+    if((prem_de+1)==sec_de && (sec_de+1)==trois_de){
+        println("Vous avez une tiers qui vaut 2 points")
+    }
+
+        point_j1 = point_j1 + 1;
+    }
+}

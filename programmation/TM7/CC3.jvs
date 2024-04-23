@@ -1,0 +1,19 @@
+int [] supprime ( int [] tbl){
+    
+     // problème si void comme retour :
+    for (int i = pos; i < seuil - 1; i++) {
+        tab[i] = tab[i + 1];
+
+    }
+    if (tab[i]=i)
+    return seuil - 1;
+    // tab[pos] = tab[pos+1]
+    // tab[pos+1] = tab[pos+2]
+    // tab[pos+2] = tab[pos+3]
+    // tab[pos+3] = tab[pos+4]
+    // ....
+}
+
+void main() {
+    
+}

@@ -1,0 +1,10 @@
+void main() {
+    double nb = 0;
+    double moy = 0;
+    for (int i = 0; i < 10; i++) {
+        nb = nb + readInteger("Quel est votre chiffre ?");
+    }
+    println("La somme est de " + nb);
+    moy = nb / 10;
+    println("La moyenne est de " + moy);
+}

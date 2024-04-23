@@ -1,0 +1,10 @@
+void main() {
+    int y;
+    int resultat;
+    resultat = 0;
+    y = readInteger("Quel table voulez-vous ?");
+    for (int i = 0; i < 13; i++) {
+        resultat = i * y;
+        println(i + " x " + y + " = " + resultat);
+    }
+}

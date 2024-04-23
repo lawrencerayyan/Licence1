@@ -1,0 +1,9 @@
+void main() {
+    int i;
+    i = 2;
+    println(i);
+    while (i < 8888) {
+        i = i + 2;
+        println(i);
+    }
+}

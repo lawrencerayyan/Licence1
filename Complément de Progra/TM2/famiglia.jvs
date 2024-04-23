@@ -1,0 +1,71 @@
+void main() {
+    Personne patriarche = creation(1756);
+    affiche(patriarche, "");
+}
+
+class Personne {
+    String nom;
+    int anneDeNaissance;
+    Personne[] enfants;
+}
+
+Personne creation(int annee) {
+    Personne personne = new Personne();
+    personne.nom = "Personne " + annee;
+    personne.anneDeNaissance = annee;
+    int prob = annee / 900;
+    int nbfils = random(0, 5 - prob);
+    personne.enfants = new Personne[nbfils];
+    for (int i = 0; i < nbfils; i++) {
+        personne.enfants[i] = creation(annee + 25 + i);
+    }
+    return personne;
+}
+
+int desendants(Personne p ){
+    if ( p == null)return 0; 
+    else {
+        int a= 1;
+        for(int i = 0 ; i<enfants.length; i++){
+            a = a + desendants(enfants[i]);
+        } 
+        return a ;
+    }
+}
+int desendantsAE(Personne p ){
+    if ( p == null)return 0; 
+    if (enfants==null || enfants.length==0) 
+    return 1;
+    else {
+        int a= 1;
+        for(int i = 0 ; i<enfants.length; i++){
+            a = a + desendantsAE(enfants[i]);
+        } 
+        return a ;
+    }
+}
+
+// int desendantsSE2(Personne p ){
+//     return desendants(p) - desendantsAE(p);
+// }
+
+int desendantsSE(Personne p ){
+    if (p==null) return 0 ;
+    if (enfants==null || enfants.length==0) 
+    return 1;
+    if {
+        int a= 0;
+        for(int i = 0 ; i<enfants.length; i++){
+            a = a + desendantsSE(enfants[i]);
+        }
+        return a ;
+    }
+}
+
+void affiche(Personne p, String pref) {
+    print(pref);
+    println(p.nom);
+    for (int i = 0; i < p.enfants.length; i++) {
+        affiche(p.enfants[i], pref + "--");
+    }
+}

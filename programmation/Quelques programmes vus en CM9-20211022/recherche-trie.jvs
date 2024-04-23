@@ -1,0 +1,37 @@
+void main() {
+    int x = readInt("Taille du tableau");
+    int tab[] = new int[x];
+    /*for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInt("Valeur ?");
+    }*/
+    int seuil = 0;
+    while (seuil < tab.length) {
+        int y = readInt("Valeur a inserer");
+        boolean b = false;
+        int i = 0;
+        while (i < seuil && tab[i] < y) {
+            i++;
+        }
+        // i>=x -> y n'est pas dans le tableau car il est plus grand que toutes les valeurs
+        // i<x && tab[i] > y -> y n'est pas dans le tableau car valeur entre deux positions
+        // tab[i] == y
+        // println(i);
+        if (i >= seuil) {
+            tab[seuil] = y;
+            seuil++;
+        } else if (tab[i] > y) {
+            for (int j = seuil; j > i; j--) {
+                tab[j] = tab[j - 1];
+            }
+            tab[i] = y;
+            seuil++;
+        } else {
+            println("valeur trouvée");
+        }
+        // println(seuil);
+        for (int j = 0; j < seuil; j++) {
+            println("tab[" + j + "]=" + tab[j]);
+        }
+    }
+    
+}

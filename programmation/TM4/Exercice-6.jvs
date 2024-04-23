@@ -1,0 +1,20 @@
+void main() {
+    int nb_de_foisv1 = readInteger("Combien de nombre voulez vous mettre ?");
+    int nb_de_foisv2 = readInteger("Combien de nombre voulez vous mettre ?");
+    int[] liste1 = new int[nb_de_foisv1];
+    int[] liste2 = new int[nb_de_foisv2];
+    for (int i = 0; i < liste1.length; i++) {
+        liste1[i] = readInteger("Entrez un chiffre");
+    }
+    for (int o = 0; o < liste2.length; o++) {
+        liste2[o] = readInteger("Entrez un chiffre");
+    }
+    if(liste1.length==liste2.length) {
+        for (int y = 0; y < liste1.length; y++) {
+            liste1[y] = liste1[y]+liste2[y];
+            println("liste[" + y + "] = " + liste1[y]);
+        }
+    } else {
+        print("Il y a une erreur");
+    }
+}

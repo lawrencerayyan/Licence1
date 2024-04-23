@@ -1,0 +1,18 @@
+void main() {
+    int nb_de_fois = readInteger("Combien de nombre voulez vous mettre ?");
+    int[] liste = new int[nb_de_fois];
+    boolean non_trouver = true;  
+    for (int i = 0; i < liste.length; i++) {
+        liste[i] = readInteger("Entrez un chiffre");
+    }
+    int k = readInteger("Quel est votre k ?");
+    for (int u = 0; u < liste.length; u++) {
+        if (k == liste[u]) {
+            println("liste[" + u + "] = " + liste[u]);
+            non_trouver = false;
+        }
+    }
+    if(non_trouver) {
+        println(k+" n'a pas été trouver");
+    }
+}

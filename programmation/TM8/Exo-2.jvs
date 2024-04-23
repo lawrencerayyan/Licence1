@@ -1,0 +1,75 @@
+int compteVote(int[][] votes, int candidat){
+    int nb = 0;
+    for (int i = 0; i < votes.length; i++) {
+        if(votes[i][0]==candidat) {
+            nb++;
+        }        
+    }
+    return nb;
+}
+
+int gagnant(int[][] votes, int nbcandidats){
+    int[] tab = new int[nbcandidats+1];
+    int val_retour = 0;
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = 0;
+    }
+    for (int i = 0; i < votes.length; i++) {
+        tab[(votes[i][0])] = tab[(votes[i][0])] + 1 ;
+        if(tab[(votes[i][0])]>(votes.length/2.0)) {
+            val_retour = votes[i][0];
+        }
+    }
+    return val_retour;
+}
+
+void efface(int[][] votes, int candidat){
+    boolean trouver;
+    for (int z = 0; z < votes.length; z ++) {
+        trouver = false;
+        if(votes[z][(votes[z].length)-1] == candidat) {
+            votes[z][(votes[z].length)-1] = 0;
+        } else {
+            for (int i = 0; i < (votes[z].length)-1; i++) {
+                if(votes[z][i]==candidat) {
+                    trouver = true;
+                    votes[z][i] = votes[z][i+1];
+                } else if(trouver) {
+                    votes[z][i] = votes[z][i+1];
+                }
+            }
+            votes[z][(votes[z].length)-1] = 0;
+        }
+    }
+}
+
+void effaceZero(int[][] votes, int nbcandidats){
+    efface(votes,nbcandidats);
+}
+
+int perdant(int[][] votes, int nbcandidats){
+    int[] candidat = new int[14];
+    int plus_petit;
+    for (int i = 0; i < votes.length; i++) {
+        for (int z = 0; z < votes[i].length; z ++) {
+            candidat[votes[i][z]] = candidat[votes[i][z]] + 1; 
+        }
+    }
+    plus_petit = candidat[0];
+    for (int i = 0; i < candidat.length; i++) {
+        if(plus_petit>candidat[i]) {
+            plus_petit = i ;
+        }
+    }
+    return plus_petit;
+}
+
+void main() {
+    int[][] votes = new int[3][2];
+    for (int i = 0; i < votes.length; i++) {
+        for (int r = 0; r < votes[i].length; r++) {
+            votes[i][r] = readInteger("remplir tab");
+        }
+    }
+    print(gagnant(votes,2));
+}

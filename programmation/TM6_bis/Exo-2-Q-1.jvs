@@ -1,0 +1,10 @@
+int sommeMultiple(int[] t,int n) {
+    int sommme_des_val = 0;
+    for (int i = n; i < t.length; i=i+n) {
+        sommme_des_val = sommme_des_val + t[i];
+    }
+    return sommme_des_val;
+}
+
+void main() {
+}

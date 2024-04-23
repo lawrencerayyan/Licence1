@@ -1,0 +1,53 @@
+int somme(int[] t) {
+    int somme = 0;
+    for (int i = 0; i < t.length; i++) {
+        somme = somme + t[i];
+    }
+    return somme;
+}
+
+boolean appartient(int[] t, int n) {
+    boolean validation = false;
+    for (int e = 0; e < t.length-1; e++) {
+        if(t[e] == t[e+1]) {
+            validation = true;
+        } else {
+            validation = false;
+        }
+    }
+    return validation;
+}
+
+boolean paire(int[] t) {
+    boolean validation = false;
+    for (int e = 0; e < t.length-1; e++) {
+        if(t[e] == t[e+1]) {
+            validation = true;
+        }
+    }
+    return validation;
+}
+
+boolean brelan(int[] t) {
+    boolean validation = false;
+    for (int e = 0; e < t.length-1; e++) {
+        if(t[e] == t[e+1] && t[e] == t[e+2]) {
+            validation = true;
+        }
+    }
+    return validation;
+}
+
+void main() {
+    int taille = readInteger("Quel est la taille ?");
+    int n = readInteger("Quel est la valeur de n ?");
+    int[] t = new int[taille];
+    for (int u = 0; u < t.length; u++) {
+        t[u]=readInteger("Entrer une valeurs ?");
+    }
+    println(somme(t));
+    println(appartient(t,n));
+    println(paire(t));
+    println(brelan(t));
+
+}

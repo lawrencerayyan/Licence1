@@ -1,0 +1,23 @@
+class Personne {
+    String nom;
+    String prenom;
+    int age;
+    double taille;
+}
+
+void saisirFichePerso(Personne pedro){
+    pedro.nom = readString("Quel est sont nom ?");
+    pedro.prenom = readString("Quel est sont prenom ?");
+    pedro.age = readInteger("Quel est sont age ?");
+    pedro.taille = readDouble("Quel est ça taille ?");
+}
+
+void afficherFichePerso(Personne pedro){
+    print("La personne ce nomme " + pedro.prenom + " " + pedro.nom + " et il a " + pedro.age + " ans et il messure " + pedro.taille + " m.");
+}
+
+void main() {
+    Personne pedro = new Personne();
+    saisirFichePerso(pedro);
+    afficherFichePerso(pedro);
+}

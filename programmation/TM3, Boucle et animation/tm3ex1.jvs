@@ -1,0 +1,26 @@
+void main() {
+
+    double somme = 0;
+    double d;
+    double x = readInt("combien de nombre reel vous voulez aditioner ?");
+
+    for (int i = 1; i <= x; i = i + 1) {
+        d = readInt("entrez un chiffre");
+        somme = d + somme;
+    }
+    println(somme);
+    double moyenne = somme / x;
+    println("votre somme est =" + somme);
+    println("et votre moyenne est=" + moyenne);
+}
+/*void main() {
+    int x = readInt("Quelle est votre taille?");
+
+    if (x > 40 || x < 270) {
+        print("vous faites xcm");
+    } else if (x < 40) {
+        print("valeur trop petite pour une taille");
+    } else if (x > 270) {
+        print("valeur trop grande pour une taille");
+    }
+}*/

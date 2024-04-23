@@ -1,0 +1,100 @@
+void main() {
+    ligne l = new Ligne();
+    Station s = new Station();
+    dessert(l,s);
+    plusprofonde(l);
+}
+
+class Ligne {
+int numero ;
+Station [] parcours ;
+}
+
+class Station {
+String nom ;
+int profondeur ;
+Ligne [] desservies ;
+}
+
+// Ligne [] creation(int numero){
+//    Ligne[] l= new Ligne [4];
+   
+//     for (int i = 0; i < 4; i++) {
+        
+//      l.numero[i]++ ;
+//     } 
+     
+//      l.parcours = new Station[10];
+//     return l;
+//  }
+
+boolean dessert(Ligne l, Station s) {
+    for (int i = 0; i < l.parcours.length; i++) {
+        if (l.parcours[i] == s) {
+            return true;
+        }
+    }
+    return false;
+}
+ 
+Station plusprofonde(ligne l) {
+    Station spp = l.parcours[0];
+    for (int i = 0; i < l.parcours.length; i++) {
+        if (l.parcours[i].profondeur > spp.profondeur) {
+            spp = l.parcours[i];
+        }
+    }
+    return spp;
+} 
+
+void tremblement ( ligne l ) {
+    for (int i = 0; i < l.parcours.length; i++) {
+        l.parcours[i].profondeur = +10;
+    }
+}
+
+Ligne connecte(Station s1, Station s2) {
+    for (int i = 0; i < s1.desservies.length; i++) { 
+        ligne l = s1.desservies[i];
+        for (int j = 0; j < l.parcours.length; j++) {
+            if (l.parcours[j] == s2) {
+                return l;
+            }
+        }
+    }
+    return null;
+}
+
+int distanceDirecte(Station s1, Station s2) {
+    if (s1 == s2) {
+        return 0;
+    }
+    for (int i = 0; i < s1.desservies.length; i++) {
+        ligne l = s1.desservies[i];
+        for (int j = 0; j < l.parcours.length; j++) {
+            if (l.parcours[j] == s2) {
+                return NombreArret(l, s1, s2);
+            }
+        }
+    }
+    return -1;
+}
+
+int NombreArret(ligne l, Station s1, Station s2) {
+    int start = 0;
+    for (int i = 0; i < l.parcours.length; i++) {
+        if (l.parcours[i] == s1 || l.parcours[i] == s2) {
+            start = i;
+            break;
+        }
+    }
+    int res = 0;
+    for (int i = start + 1; i < l.parcours.length; i++) {
+        if (l.parcours[i] == s2 || l.parcours[i] == s1) {
+            res = i - start;
+        }
+    }
+    return res;
+}
+
+

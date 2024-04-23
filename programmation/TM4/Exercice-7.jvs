@@ -1,0 +1,14 @@
+void main() {
+    int taille = readInteger("Quel est la taille de votre suite");
+    int[] liste = new int[(taille*2)-1];
+    for (int i = 0; i < taille; i++) {
+        liste[i] = readInteger("Quel est votre chiffre ?");   
+    }
+    for (int y = taille-2; y >= 0; y=y-1) {
+        liste[taille] = liste[y];
+        taille++;
+    }
+    for (int z = 0; z < liste.length; z++) {
+        print(liste[z]+" ");
+    }
+}

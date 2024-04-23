@@ -1,0 +1,67 @@
+boolean candidatsEx(int[][] votes, int nbcandidats){
+    boolean tt_candiant_ex = true;
+    for (int i = 0; i < votes.length; i++) {
+        for (int r = 0; r < votes[i].length; r++) {
+            if((votes[i][r]>nbcandidats) || (votes[i][r]<0)) {
+                tt_candiant_ex = false;
+            }
+        }
+    }
+    return tt_candiant_ex;
+}
+
+boolean uniquePref(int[][] votes, int candidat){
+    int nb_de_vote;
+    boolean plusieur_fois = true;
+    for (int i = 0; i < votes.length; i++) {
+        nb_de_vote = 0;
+        for (int r = 0; r < votes[i].length; r++) {
+            if(votes[i][r]==candidat) {
+                nb_de_vote++;
+                if(nb_de_vote>=2) {
+                    plusieur_fois = false;
+                }
+            }   
+        }
+    }
+    return plusieur_fois;
+}
+
+boolean prefCorrect(int[][] votes){
+    boolean verif_final = true;
+    boolean verif;
+    for (int i = 0; i < votes.length; i++) {
+        verif = false;
+        for (int n = 0; n < votes[i].length-1; n++) {
+            if(votes[i][n]==0) {
+                if(!(votes[i][n] == votes[i][n+1])) {
+                    verif_final = false;
+                }
+            }
+        }
+    }
+    return verif_final;
+}
+
+boolean verifieVote(int[][] votes, int nbcandidats){
+    if(candidatsEx(votes,nbcandidats) && uniquePref(votes,nbcandidats) && prefCorrect(votes)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void main() {
+    int[][] tab = new int[readInteger("taille")][readInteger("taille")];
+    for (int i = 0; i < tab.length; i++) {
+        for (int r = 0; r < tab[i].length; r++) {
+            tab[i][r] = readInteger("remplir tab");
+        }
+    }
+    print(candidatsEx(tab,4));
+    for (int i = 0; i < tab.length; i++) {
+        for (int r = 0; r < tab[i].length; r++) {
+            print(tab[i][r]);
+        }
+    }
+}

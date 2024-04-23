@@ -1,0 +1,36 @@
+void main() {
+
+    int x = random(1, 11);
+    int X = random(1, 11);
+    int y = random(1, 11);
+    int z = random(1, 11);
+    if (z < 5) {
+        print("(");
+    } else {
+        print("@(");
+    }
+    if (x <= 4) {
+        print("o");
+    } else if (x > 8) {
+        print("*");
+    } else {
+        print("-");
+    }
+    if (y < 5) {
+        print(".");
+    } else {
+        print("_");
+    }
+    if (X <= 6) {
+        print("*");
+    } else if (X > 9) {
+        print("o");
+    } else {
+        print("-");
+    }
+    if (z > 5) {
+        print(")");
+    } else {
+        print(")@");
+    }
+}

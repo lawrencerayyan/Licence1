@@ -1,0 +1,38 @@
+void main() {
+    int n = readInteger("donner un nombre N : ");
+    int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+        
+    }
+    
+    
+    println (tabMultiple(tab , n));
+   
+}
+
+int [] tabMultiple (int [] tab , int n){
+   int j ;
+   if(tab.length==0) {
+      j= 0 ;
+       
+   }else{
+    
+    int [] tab2 = new int [(tab.length-1)/n+1] ;
+    for (int i = 0; i < tab.length; i=i+n) {
+        
+            tab2[j]=tab[i] ;
+             j++;
+            
+        }
+        for ( j = 0 ;j < tab2.length; j++) {
+        
+        //println("tab2[" + j + "]=" + tab2[j]);
+        
+    }
+   }
+        return tab2;
+    }
+    

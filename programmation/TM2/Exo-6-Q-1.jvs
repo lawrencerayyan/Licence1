@@ -1,0 +1,8 @@
+void main() {
+    int nouveaux_chiffre = -1;
+    int dernier_chiffre = 0;
+    while (nouveaux_chiffre != dernier_chiffre) {
+        dernier_chiffre = nouveaux_chiffre;
+        nouveaux_chiffre = readInt("Quel est votre chiffre ?");
+    }
+}

@@ -1,0 +1,90 @@
+//     int x = readInteger("La taille de tableau?");
+//     int tab[] = new int [x];
+//     int somme =0 ;
+//     for( int i= 0 ; i<tab.length; i++){
+//         tab[i]=readInteger("valeur ? ");
+//         println("tableau[" + i  +"] =" + tab[i]);
+
+//     }
+//     int i= readInteger("i=");
+//     for(int j= 0; j<i;j++)
+//     somme = tab[(tab.length)- 1] ;
+//     for(int y = tab.length - 1 ; y> 0; y--){
+//         tab[y]=tab[y-1];
+//     }
+//     tab[0]= somme;
+//     for(int t= 0; t <tab.length; t++){
+//         println("tableau["+ t + "] =" + tab[t]);
+//     }
+
+// }
+
+// trouver un valeur dans un tableau et sortir lorsqu'on la trouve
+// void main() {
+//     int x = readInteger("entrez la taille de tableau");
+//     int[] tab = new int[x];
+//     for (int i = 0; i < tab.length; i++) {
+//         tab[i] = readInteger("valeur :");
+//         println("tab[" + i + "]=" + tab[i]);
+//     }
+//     int v =readInteger("valeur cherchee");
+//     boolean b=false;
+//     for(int i = 0 ; i<tab.length && !b;i++){
+//         if(tab[i]==v){
+//             b= true ;
+//         }
+//     }
+//     if(b){
+//         println("valeur "+v+" a ete trouve ");
+//     }else {
+//         println("valeur "+v+" n'existe pas dans le tableau");
+//     }
+// }
+
+// trouvr un valeur max dans un taleau
+// void main(){
+//     int x = readInteger("taille de tableau");
+//     int [] tab = new int [x];
+//     int max = -1;
+//     for(int i = 0 ; i< tab.length;i++){
+//         tab[i]= readInteger("quelle est la valeur de la case ?");
+//         println("tab["+i+"]= "+tab[i]);
+//         if(tab[i]>max){
+//             max = tab[i];
+//         }
+//     }
+//     println(max);
+// }
+// void main (){
+//     int x= readInteger("taille de taleau");
+//     int []tab = new int [x];
+//     for (int i = 0; i<tab.length;i++){
+//         tab[i]=readInteger("valeur");
+//           println("tab[" + i + "]=" + tab[i]);
+//     }
+    
+//     int seuil = 0;
+//     while (seuil < tab.length) {
+//         int y = readInt("Valeur a inserer");
+//         boolean b = false;
+//         int i = 0;
+//         while (i < seuil && tab[i] < y) {
+//             i++;
+//         }
+    
+// }
+// }
+void main() {
+   int x = readInt("Coté du carré ?");
+String tab[][] = new String[x][x];
+for (int i = 0; i < x; i++) {
+for (int j = 0; j < i; j++) {
+tab[i][j] = "*";
+}
+tab[i][i]="0";
+for (int j = i + 1; j < x; j++) {
+tab[i][j]="*";
+} 
+}
+}
+

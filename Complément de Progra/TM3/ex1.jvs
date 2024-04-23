@@ -1,0 +1,8 @@
+void reset (int width , int height )
+void reset (int width , int height , boolean centered )
+void reset (int width , int height , boolean centered , boolean zoom )
+// Initialise l’image .
+boolean setPixel (int x , int y , int valeur )
+boolean setPixel (int x , int y , int red , int green , int blue )
+boolean setPixel (int x , int y , String color )
+// Change la valeur d’un pixel de l’image .

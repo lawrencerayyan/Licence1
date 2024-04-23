@@ -1,0 +1,24 @@
+void main() {
+    int N = readInt("Donnez votre N");
+    int u;
+    int i = 0;
+    u = N;
+    while (u > 1) {
+        if (u % 2 == 0) {
+            print(u);
+            print("/2=");
+            u = u / 2;
+            println(u);
+        } else {
+            print(u);
+            print("*3+1=");
+            u = 3 * u + 1;
+            println(u);
+        }
+
+        i++;
+    }
+    print("Conjecture verifiee apres ");
+    print(i);
+    println(" iterations");
+}

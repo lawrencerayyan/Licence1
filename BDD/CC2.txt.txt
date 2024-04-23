@@ -1,0 +1,10 @@
+-----1
+select country , count(author_id) from author2  GROUP BY author2.country HAVING publisher_id IS NULL ;
+-----2
+SELECT book2.title , author2.name FROM author2 INNER JOIN book2 on author2.author_id = book2.author_id ;
+-----3
+SELECT author2.name FROM author2 INNER JOIN book2 on author2.author_id = book2.author_id WHERE NOT EXISTE book2.book_type ;
+-----4
+SELECT book2.title , author2.name FROM author2 INNER JOIN book2 on author2.author_id = book2.author_id GROUP BY book2.title author2.name HAVING book2.book_id = 1 ;
+-----5
+SELECT author2.publisher_id , author2.name FROM author2 INNER JOIN publisher_id on author2.author_id = publisher_id.author_id WHERE author2.country=publisher_id.country

@@ -1,0 +1,40 @@
+int sommeMultiple(int[] t,int n) {
+    int sommme_des_val = 0;
+    for (int i = 0; i <= t.length-1; i=i+n) {
+        sommme_des_val = sommme_des_val + t[i];
+    }
+    return sommme_des_val;
+}
+
+int[] tabMultiple(int[] t, int n) {
+    if (t.length>0){
+        int[] tab = new int[((t.length-1)/n)+1];
+        int index = 0;
+        for (int i = 0; i <= t.length-1; i=i+n) {
+            tab[index] = t[i];
+            index++;
+        }
+        return tab;
+    } else {
+        int[] tab = new int[0];
+        return tab;
+    }
+}
+
+int[] tabHasard(int n, int h) {
+    int[] tab = new int[n];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = random(0,h);
+    }
+    return tab;
+}
+
+int sommeHasard(int[] t, int n) {
+    int somme = 0;
+    for (int i = 0; i < t.length; i++) {
+        somme = somme + t[random(0,t.length)];
+    }
+    return somme;
+}
+void main() {
+}

@@ -1,0 +1,36 @@
+void main() {
+    int fnn = 0; // fnn c'est pour f_{i-1}
+    int fn = 1; // fn c'est pour f_{i}
+    int f = 1; // f c'est pour f_{i+1}
+    int n = readInt("Donnez l'indice du nombre de Fibonacci recherche");
+    int i = 1;
+    while (i <= n) {
+        print("iteration ");
+        print(i);
+        print(" : ");
+        print(fnn);
+        print("+");
+        print(fn);
+        print("=");
+        f = fn + fnn;
+        println(f);
+        fnn = fn;
+        fn = f;
+        i++;
+    }
+    for (int i = 1; i <= n; i++) {
+        print("iteration ");
+        print(i);
+        print(" : ");
+        print(fnn);
+        print("+");
+        print(fn);
+        print("=");
+        f = fn + fnn;
+        println(f);
+        fnn = fn;
+        fn = f;
+    }
+
+    println(f);
+}

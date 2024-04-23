@@ -1,0 +1,56 @@
+    String[] decomposePhrase(String s){
+        s = s + " ";
+        int nb_space = 0;
+        for (int i = 0; i < stringLength(s); i++) {
+            if(equal(stringNth(s,i), " ")){
+                nb_space++;
+            }
+        }
+        String mot = "";
+        String[] tab = new String[nb_space];
+        int nb_mot = 0;
+        for (int i = 0; i < stringLength(s); i++) {
+            if(!equal(stringNth(s,i), " ")){
+                mot = mot + stringNth(s,i);
+            } else {
+                tab[nb_mot] = mot;
+                mot = "";
+                nb_mot++;
+            }
+        }
+        return tab;
+    }
+
+    String remplaceMot(String s, String mot1, String mot2){
+        String[] tab = decomposePhrase(s);
+        for (int i = 0; i < tab.length; i++) {
+            if(equal(tab[i],mot1)) {
+                tab[i] = mot2;
+            }
+        }
+        s = "";
+        for (int i = 0; i < tab.length-1; i++) {
+            s = s + tab[i] + " ";
+        }
+        s = s + tab[(tab.length-1)];
+        return s;
+    }
+
+    String inversePhrase(String s) {
+        String[] tab = decomposePhrase(s);
+        s = "";
+        for (int i = 0; i < tab.length-1; i++) {
+            s = s + tab[tab.length-i-1];
+            s = s + " ";
+        }
+        s = s + tab[0];
+        return s;
+
+    }
+
+    void main() {
+        String[] s = decomposePhrase("1 2 3 4 5 6 7 8 9");
+        for (int i = 0; i < s.length; i++) {
+            println(s[i]);
+        }
+    }

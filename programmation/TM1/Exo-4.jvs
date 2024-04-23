@@ -1,0 +1,11 @@
+void main() {
+    int age;
+    age = readInt("Quel est votre age?");
+    if (age == 1) {
+        println("Vous avez 1 an");
+    } else {
+        print("Vous avez ");
+        print(age);
+        println(" ans");
+    }
+}

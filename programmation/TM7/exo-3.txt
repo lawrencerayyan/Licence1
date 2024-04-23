@@ -1,0 +1,11 @@
+verbe est
+verbe mange
+verbe court
+sujet chat
+sujet etudiant
+sujet velo
+pronom le
+pronom un
+complement dehors
+complement rapide
+complement noir

@@ -1,0 +1,9 @@
+void main() {
+    int nb = 1;
+    int rd = random(1, 7);
+    while (rd != 6) {
+        rd = random(1, 7);
+        nb = nb + 1;
+    }
+    print("Vous avait fait " + nb + " tirages.");
+}

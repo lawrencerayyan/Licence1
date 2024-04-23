@@ -1,0 +1,30 @@
+void main() {
+    int nombre = readInt("donnez un nombre:");
+    while (nombre < 0) {
+        nombre = readInt("nombre uncoreccte :");
+    }
+    for (int i = 0; i <= nombre; i = i + 1) {
+        print("i=");
+        println(i);
+    }
+    sleep(5000);
+    clear();
+    for (int i = 9999; i > 0; i = i - 1) {
+        print("i=");
+        println(i);
+    }
+    sleep(5000);
+    clear();
+    for (int i = 2; i < 8888; i = i + 2) {
+        print("i=");
+        println(i);
+    }
+    sleep(5000);
+    clear();
+    for (int i = 7777; i < 33; i = i - 2) {
+        print("i=");
+        println(i);
+    }
+    sleep(5000);
+    clear();
+}

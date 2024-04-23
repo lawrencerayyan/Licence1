@@ -1,0 +1,24 @@
+
+h1{
+    color: blue;
+    font-size: 14pt;
+    
+}
+h2{
+    font-size:12pt ;
+}
+h3{
+    border: 1px solid black;
+    background-color: rgb(88, 88, 252);
+    color: white;
+}
+
+img {
+    width:inherit;
+}
+.col{
+    width: 400xp;
+}
+.row{
+    width: 400xp;
+}

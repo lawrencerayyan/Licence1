@@ -1,0 +1,42 @@
+void main() {
+    int[] tab = new int[3];
+    int stockage;
+    int i = 1;
+    int points;
+    while (i < 4) {
+        tab[i - 1] = readInteger("Quel est la valeur de votre " + i + " de ?");
+        if (tab[i - 1] <= 6 && tab[i - 1] >= 1) {
+            i++;
+        }
+    }
+    if (tab[0] > tab[1]) {
+        stockage = tab[0];
+        tab[0] = tab[1];
+        tab[1] = stockage;
+    }
+    if (tab[2] < tab[1]) {
+        stockage = tab[2];
+        tab[2] = tab[1];
+        tab[1] = stockage;
+    }
+    if (tab[0] > tab[1]) {
+        stockage = tab[0];
+        tab[0] = tab[1];
+        tab[1] = stockage;
+    }
+    for (int y = 1; y < tab.length + 1; y++) {
+        println("Le de " + y + " vaut " + tab[y - 1]);
+    }
+    if (tab[0] == tab[1] && tab[1] == tab[2]) {
+        println("Vous avez un Brelan qui vaut 7 points");
+    } else if (tab[0] == tab[1]) {
+        points = tab[0] * 2;
+        println("Vous avez une paire d'as qui vaut " + points + "points");
+    } else if (tab[0] == tab[2]) {
+        points = tab[0] * 2;
+        println("Vous avez une paire d'as qui vaut " + points + " points");
+    } else if (tab[2] == tab[1]) {
+        points = tab[0] * 2;
+        println("Vous avez une paire d'as qui vaut " + points + " points");
+    }
+}

@@ -1,0 +1,7 @@
+void main() {
+    String saisi = "4 8 15 16 23 42";
+    while (equal("4 8 15 16 23 42", saisi)) {
+        saisi = readString("Saisir le code");
+    }
+    println("explosif");
+}

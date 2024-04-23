@@ -1,0 +1,27 @@
+void main() {
+    print("\n\n  *");
+    sleep(1000);
+    clear();
+    print("\n  .\n  *\n  ~");
+    sleep(1000);
+    clear();
+    print("\n , .\n(.*.)\n ` '");
+    sleep(1000);
+    clear();
+    print(" , .\n[*-*]\n*. .*\n[*-*]\n ` '");
+    sleep(1000);
+    clear();
+    print(".***.\n|* *]\n[   ]\n[* *]\n'***'");
+    sleep(1000);
+    clear();
+    print(".*-*.\n|*.*]\n[   *\n[*.*|\n'***'");
+    sleep(1000);
+    clear();
+    print(".*-*.\n|'  *\n*   |\n*. .|\n'-**'");
+    sleep(1000);
+    clear();
+    print(".--*.\n|'  |\n*   |\n* ..|\n'---'");
+    sleep(1000);
+    clear();
+    print(".---.\n| " + random(1, 7) + " |\n|   |\n| " + random(1, 7) + " |\n'---'");
+}

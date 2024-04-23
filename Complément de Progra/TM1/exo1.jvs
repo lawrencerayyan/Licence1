@@ -1,0 +1,17 @@
+ void afficheNombresDecroissant (int n){
+     if(n>0){
+     println(n);
+     afficheNombresDecroissant(n-1);}
+    
+ }
+
+  void afficheNombresCroissant (int n){
+      if(n>0){
+          afficheNombresCroissant(n-1);
+          println(n);
+      }
+  }
+ void main() {
+     afficheNombresDecroissant(6);
+     afficheNombresCroissant(50);
+ }

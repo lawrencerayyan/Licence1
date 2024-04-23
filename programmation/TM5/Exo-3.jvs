@@ -1,0 +1,52 @@
+void main() {
+    int taille = readInteger("Quel est la taille ?");
+    String[][] tab = new String[taille][taille];
+    int nb_croix = 0;
+    int nb_croix2 = taille-1;
+    for (int i = 0; i < tab.length; i++) {
+        for (int u = 0; u < taille; u++) {
+            if(u==nb_croix) {
+                tab[i][u]="X";
+            } else if (nb_croix2==u) {
+                tab[i][u]="X";
+            } else {
+                tab[i][u]=" ";
+            }
+        }
+        nb_croix++;
+        nb_croix2--;
+    }
+    for (int r = 0; r < tab.length; r++) {
+        for (int t = 0; t < tab[r].length; t++) {
+            print(tab[r][t]);
+        }
+    println("");
+    }
+}
+
+
+
+
+/*void main() {
+    int n = readInteger("Quel est la valeur de n (n = implaire) ?");
+    int ligne = 0;
+    int prem = 0;
+    int dernier = n - 1;
+    for (int i = 0; i < n; i++) {
+        for (int u = 0; u < n; u++) {
+            if (prem == u && prem == i) {
+                print("X");
+                prem++;
+                if (dernier == u) {
+                    dernier--;
+                }
+            } else if (dernier == u) {
+                print("X");
+                dernier--;
+            } else {
+                print(" ");
+            }
+        }
+        println("");
+    }
+}*/

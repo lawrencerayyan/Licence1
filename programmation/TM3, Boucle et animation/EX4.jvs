@@ -1,0 +1,40 @@
+void main() {
+    /*
+        int N = readInt("entrer une valeur de n");
+        int a = N;
+        int k = readInt("nombre de boucles souhaité");
+        println("a0= " + a);
+        for (int i = 1; i < k + 1; i++) {
+            if ((a % 3) == 0) {
+                a = a / 3;
+                println("a" + i + " = " + a);
+            } else {
+                a = 2 * a + 1;
+                println("a" + i + " = " + a);
+            }
+        }
+    */
+
+    int N = readInt("Donnez votre N");
+    int u;
+    int i = 1;
+    u = N;
+    while (u != 1) {
+        if (u % 3 == 0) {
+            print(u);
+            print("/3=");
+            u = u / 3;
+            println(u);
+        } else {
+            print(u);
+            print("*2+1=");
+            u = 2 * u + 1;
+            println(u);
+        }
+
+        i++;
+    }
+    print("Conjecture verifiee apres ");
+    print(i);
+    println(" iterations");
+}

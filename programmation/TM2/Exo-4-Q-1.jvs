@@ -1,0 +1,19 @@
+void main() {
+    int k;
+    int n;
+    int a;
+    int y;
+    n = readInteger("Choisissez un n");
+    k = readInteger("Choisissez un k");
+    a = n;
+    println("a0 = " + a);
+    for (int i = 1; i < k + 1; i++) {
+        if ((a % 3) == 0) {
+            a = a / 3;
+            println("a" + i + " = " + a);
+        } else {
+            a = (a * 2) + 1;
+            println("a" + i + " = " + a);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+void main() {
+    int[] tab;
+    int y = readInteger("choisissez votre serie des nombre");
+    tab = new int[y];
+
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInt("votre nombre " + i);
+        print("tab[");
+        print(i);
+        print("]=");
+        println(tab[i]);
+    }
+    int[] tab2;
+    int y2 = readInteger("choisissez votre serie des nombre");
+    tab2 = new int[y2];
+
+    for (int t = 0; t < tab2.length; t++) {
+        tab2[t] = readInt("votre nombre " + t);
+        print("tab2[");
+        print(t);
+        print("]=");
+        println(tab2[t]);
+    }
+    if (tab.length == tab2.length) {
+        for (int z = 0; z < tab.length; z++) {
+            tab[z] = tab[z] + tab2[z];
+            print("la resultat de l'addistion = ");
+            println(tab[z]);
+        }
+    } else {
+        println("erreur404");
+    }
+}

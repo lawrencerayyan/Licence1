@@ -1,0 +1,10 @@
+void main() {
+    double nb = 0;
+    for (int i = 0; i < 100000; i++) {
+        if (random(1, 7) == 6) {
+            nb = nb + 1;
+        }
+    }
+    nb = nb / 100000;
+    print("La moyenne est de " + nb);
+}

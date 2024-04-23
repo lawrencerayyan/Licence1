@@ -1,0 +1,22 @@
+void affiche_tableau(int[] arg) {
+    for (int i = 0; i < arg.length; i++) {
+        println("valeur pour indice " + i + " : " + arg[i]);
+    }
+}
+
+void cree_tableau(int[] arg) {
+    // pas besoin de renvoyer un résultat !
+    // les modifications des cases du tableau "arg" seront préservées après la fin de la
+    // fonction
+    for (int i = 0; i < arg.length; i++) {
+        arg[i] = readInteger("Donne moi la prochaine valeur du tableau");
+    }
+}
+
+void main() {
+    int[] tab;
+    int dimension = readInteger("Dimension du tableau");
+    tab = new int[dimension];
+    cree_tableau(tab);
+    affiche_tableau(tab);
+}

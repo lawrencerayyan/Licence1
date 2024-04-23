@@ -1,0 +1,17 @@
+boolean appartient(int[] tab , int n) {
+    
+    boolean b = false; 
+    for (int i = 0; i < tab.length; i++) {
+     if( tab[i] == n){
+         b= true ;
+     }
+    }
+    return b ;
+}
+void main() {
+    int[] tab = new int[] {10, 20, 30, 50};
+    boolean s;
+     int n = readInteger("valeur a chercher dans le tableau");
+    s = appartient(tab, n);
+    println(s);
+    }

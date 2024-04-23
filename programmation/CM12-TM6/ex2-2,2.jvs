@@ -1,0 +1,33 @@
+int[] tabMultiple(int[] tab, int n) {
+    int l ;
+    if (tab.length ==  0) {
+        l=0;
+    }
+    else {
+        l=max(1, tab.length / n);
+    }
+    int[] tab2 = new int[l];
+    // println("taille=" + tab2.length);
+    int j = 0;
+    for (int i = 0; i < tab.length; i++) {
+        if (i % n == 0) {
+            // println("j=" + j);
+            // println("i" + i);
+            tab2[j] = tab[i];
+            j++;
+        }
+    }
+    return tab2;
+}
+
+void main() {
+    int[] tab = new int[] {30, 30, 20, 10, 25, 45, 80, 14, 12};
+    int s;
+    int n;
+    n = readInteger("entrer un indice");
+    int[] m = new int[tab.length / n];
+    m = tabMultiple(tab, n);
+    for (int i = 0; i < m.length; i++) {
+        println(m[i]);
+    }
+}

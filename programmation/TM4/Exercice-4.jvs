@@ -1,0 +1,12 @@
+void main() {
+    int nb_de_fois = readInteger("Combien de nombre voulez vous mettre ?");
+    int[] liste = new int[nb_de_fois];
+    for (int i = 0; i < liste.length; i++) {
+        liste[i] = readInteger("Entrez un chiffre");
+    }
+    int k = readInteger("Quel est votre k ?");
+    for (int u = 0; u < liste.length; u++) {
+        liste[u] = liste[u]*k; 
+        println("liste[" + u + "] = " + liste[u]);
+    }
+}

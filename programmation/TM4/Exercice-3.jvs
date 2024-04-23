@@ -1,0 +1,21 @@
+void main() {
+    int[] liste = new int[20];
+    for (int i = 0; i < liste.length; i++) {
+        liste[i] = 0;
+    }
+    int saisi;
+    int complete = 0;
+    while (complete != 20) {
+        complete = 0;
+        saisi = readInteger("Quel est votre chiffre (entre 0 et 19)");
+        if (saisi >= 0 && saisi <= 19) {
+            liste[saisi] = 1;
+            for (int u = 0; u < liste.length; u++) {
+                if (liste[u] != 0) {
+                    complete++;
+                }
+            }
+        }
+    }
+    print("Tout les chiffres ont été taper au moins une fois");
+}

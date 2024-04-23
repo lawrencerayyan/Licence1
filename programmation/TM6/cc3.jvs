@@ -1,0 +1,19 @@
+int[] supprime(int[] tb1) {
+    int x = 0;
+    for (int i = 0; i < tb1.length; i++) {
+        if (tb1[i] != i) {
+            x++;
+        }
+    }
+    int[] res = new int[x];
+    x = 0;
+    for (int i = 0; i < tb1.length; i++) {
+        if (tb1[i] != i) {
+            res[x] = tb1[i];
+            x++;
+        }
+    }
+    return res;
+}
+
+void main() {}

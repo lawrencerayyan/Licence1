@@ -1,0 +1,133 @@
+-----Q1
+
+SELECT places.place_name ,count(matches.place) FROM places INNER JOIN matches on matches.place = places.place_id GROUP BY places.place_name
+
+-----Q2
+
+SELECT teams.team_name, memberships.player, players.first_name FROM teams INNER JOIN memberships on memberships.team = teams.team_id INNER JOIN players on players.player_id = memberships.player GROUP BY teams.team_name, memberships.player
+
+-----Q3
+
+SELECT teams.team_name , matches.place , places.place_name , matches.match_date FROM matches INNER JOIN teams on matches.winner = teams.team_id INNER JOIN places ON matches.place = places.place_id WHERE matches.winner > 0
+
+
+-----Q4
+
+SELECT teams.team_name, matches.match_date FROM matches LEFT JOIN places ON (place = place_id) RIGHT JOIN teams ON (winner = team_id)
+
+-----Q5 
+
+SELECT teams.team_name FROM matches INNER JOIN teams on matches.winner = teams.team_id WHERE EXISTS (SELECT matches.winner FROM matches WHERE matches.winner = 0)
+
+-----Q6
+
+SELECT teams.team_name  FROM teams INNER JOIN matches on matches.winner = teams.team_id WHERE matches.winner >any (SELECT matches.winner FROM matches WHERE matches.winner >= 2)
+
+-----Q7
+
+SELECT teams.team_name , COUNT(matches.winner) FROM matches INNER JOIN teams on matches.winner = teams.team_id WHERE matches.winner > 0 GROUP BY teams.team_name
+
+-----Q8
+
+SELECT teams.team_name FROM teams INNER JOIN matches on matches.winner = teams.team_id WHERE matches.winner = (SELECT MAX(matches.winner) FROM matches )
+<-- ici ça devrait etre MAX(matches.winner) mais je ne sais pas pourquoi ça marche pas. Par contre avec le MIN ça me deonne la bonne reponse -->
+
+-----Q9
+
+SELECT DISTINCT teams.team_name FROM matches INNER JOIN teams on matches.winner = teams.team_id WHERE NOT EXISTS (SELECT match_id FROM `matches` WHERE match_date BETWEEN '2021-12-31' AND '2021-01-01')
+
+-----Q10
+
+SELECT team2 FROM matches INNER JOIN teams on teams.team_id=matches.winner WHERE team1=1 OR team2=1 AND winner=1 
+
+
+____________________________________________________________________________________________________________________________________
+
+
+PARTIE B 
+
+
+Ici nous avons créés 2 tables. Championships avec une clé primary championships_id et clé étrangere team qui la lie avec la table teams on team_id,
+et la table coach avec un clé primary coach_id et clé étrangere team qui la lie avec la table teams on teams id.
+Puis nous avons rajouter une colonne (taille) à la table players en suite nous avons inseré des valeur en utilisant la code suivante :
+
+ CREATE TABLE championships(
+    championships_id INT NOT NULL AUTO_INCREMENT,
+    championships_name VARCHAR(50),
+    team int ,
+    champion INT ,
+    PRIMARY KEY (championships_id),
+    FOREIGN key (team) REFERENCES teams(team_id)
+    
+  );
+
+ CREATE TABLE coach(
+  coach_id INT NOT NULL AUTO_INCREMENT,
+  coach_name VARCHAR(50),
+  nationalité VARCHAR (50),
+  team INT,
+  PRIMARY KEY (coach_id),
+  FOREIGN KEY (team) REFERENCES teams(team_id)
+ );
+
+ALTER TABLE players ADD taille double ; 
+UPDATE players SET taille = 2 WHERE players.player_id = 1 
+UPDATE players SET taille = 2.10 WHERE players.player_id = 2 
+UPDATE players SET taille = 2.05 WHERE players.player_id = 3 
+UPDATE players SET taille = 1.85 WHERE players.player_id = 4 
+UPDATE players SET taille = 1.95 WHERE players.player_id = 5 
+
+
+
+--------Q1 : les noms des équipes , le nom de compétitions et combien de fois l'equipe l'a gagné .
+
+SELECT teams.team_name ,championships.championships_name, championships.champion FROM teams INNER JOIN championships on teams.team_id=championships.team
+
+--------Q2 : les noms des équipes qui ont gagné le UCL plus que 5 fois 
+
+SELECT teams.team_name FROM teams INNER JOIN championships on teams.team_id=championships.team WHERE championships_name = 'ucl' AND champion > 5
+
+--------Q3 : le nom d'équipe qui a gagné le plus de chamiponnat 
+
+SELECT teams.team_name , max(champion)  FROM teams INNER JOIN championships on teams.team_id=championships.team
+
+--------Q4 : le nom de cahque coach avec son équipe  
+
+SELECT coach_name , teams.team_name FROM `coach` INNER JOIN teams on coach.team=teams.team_id
+
+--------Q5 : le nom de coach , son équipe et les championnats qu'ils ont gagnés 
+
+SELECT coach_name , teams.team_name , championships.championships_name FROM `coach` INNER JOIN teams on coach.team=teams.team_id INNER JOIN championships on championships.team = teams.team_id
+
+--------Q6 : chaque nationalité avec le nombre de coach qui a cette nationalité 
+
+SELECT nationalité,count(nationalité) FROM coach GROUP BY nationalité
+
+--------Q7 : la taille moyenne de tous les joueur
+ 
+SELECT AVG(players.taille) from players
+
+--------Q8 : La date de chaque match  dans Santiago Bernabeu
+
+SELECT match_date FROM `matches` INNER JOIN places ON matches.place=places.place_id WHERE places.place_name = 'Santiago Bernabeu'
+
+--------Q9 : La moyenne de victoire de chauqe équipe
+
+SELECT AVG(matches.winner),teams.team_name FROM matches INNER JOIN teams ON matches.team1 = teams.team_id OR matches.team2= teams.team_id GROUP BY teams.team_name
+
+--------Q10 : les noms des équipes et le nom de compétitions à la quelle elles participent 
+
+SELECT teams.team_name ,championships.championships_name FROM teams INNER JOIN championships on teams.team_id=championships.team GROUP BY championships.championships_name , teams.team_name
+
+
+
+
+
+
+
+
+
+
+
+
+

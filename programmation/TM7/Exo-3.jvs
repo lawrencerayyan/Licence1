@@ -1,0 +1,120 @@
+void genere() {
+    java.io.OutputStreamWriter fichier;
+    fichier = openOut("exo-3.txt");
+    String[][] tab = new String [readInteger("Combien de ligne voulez vous ?")][2];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i][0] = readString("Que voulez vous mettre dans le premiere colonne ?");
+        tab[i][1] = readString("Que voulez vous mettre dans le premiere ligne ?");
+    }
+    for (int i = 0; i < tab.length; i++) {
+        printlnToFile(fichier, tab[i][0] + " " + tab[i][1]);
+    }
+    closeOut(fichier);
+}
+
+String[][] lire(){
+    String stockage = "";
+    String s;
+    int nb_ligne =  readInteger("Combien de ligne voulez vous lire ?");
+    String[][] tab = new String[nb_ligne][2];
+    java.util.Scanner fichier;
+    fichier = openIn("TM7/exo-3.txt");
+    for (int i = 0; i < nb_ligne; i++) {
+        s = readStringFromFile(fichier);
+        for (int rr = 0; rr < stringLength(s); rr++) {
+            if(!equal(stringNth(s,rr)," ")) {
+                stockage = stockage + (stringNth(s,rr));
+            } else {
+                tab[i][0] = stockage;
+                stockage = "";
+            }
+        }
+        tab[i][1] = stockage;
+        stockage = "";
+    }
+    closeIn(fichier);
+    return tab;
+}
+
+String typeMot(String s,String[][] tab){
+    for (int i = 0; i < tab.length; i++) {
+        if(equal(s,tab[i][1])){
+            return tab[i][0];
+        }
+    }
+    return "Le mot n'est pas present dans ce fichier";
+}
+
+String yoda(String s, String[][] tab) {
+    s = s + " ";
+    String mot = "";
+    int nb_mot = 1;
+    Boolean prem = true;
+    String type_prem = "";
+    String pronom = "";
+    String sujet = "";
+    String verbe = "";
+    String complement = "";
+    for (int i = 0; i < stringLength(s); i++) {
+        mot = mot + stringNth(s,i);
+        for (int e = 0; e < tab.length; e++) {
+            if(equal(mot," ")) {
+                mot = "";
+            } else if (equal(mot,tab[e][1])) {
+                if(equal("pronom",tab[e][0])) {
+                    pronom = mot;
+                    if(prem) {
+                        prem = false; 
+                        type_prem = "pronom";
+                    }
+                } else if(equal("sujet",tab[e][0])) {
+                    sujet = mot;
+                } else if(equal("complement",tab[e][0])) {
+                    complement = mot;
+                    if(prem) {
+                        prem = false;
+                        type_prem = "complement";
+                    }
+                } else if(equal("verbe",tab[e][0])) {
+                    verbe = tab[e][1];
+                }
+                mot = "";
+                nb_mot++;
+            }
+        }
+
+    }
+    if(equal(type_prem,"pronom")) {
+        s = complement + " " +verbe + " " +pronom + " " +sujet;
+        return s;
+    } else {
+        s = pronom + " " +sujet + " " +verbe + " " +complement;
+        return s;
+    }
+}
+
+void main() {
+    String[][] tab = lire();
+    String mot;
+    String pronom = "";
+    String sujet = "";
+    String verbe = "";
+    String complement = "";
+    while(equal(pronom,"") || equal(sujet,"") || equal(verbe,"") || equal(complement,"")) {
+        mot = tab[random(0,tab.length)][1];
+        if(equal("pronom",typeMot(mot,tab))) {
+            pronom = mot;
+        } else if(equal("sujet",typeMot(mot,tab))) {
+            sujet = mot;
+        } else if(equal("verbe",typeMot(mot,tab))) {
+            verbe = mot;
+        } else if(equal("complement",typeMot(mot,tab))) {
+            complement = mot;
+        }
+    }
+    if(random(0,2)==1) {
+        print(yoda((pronom+sujet+verbe+complement),lire()));
+    } else {
+        print(yoda(complement+verbe+(pronom+sujet),lire()));
+    }
+}

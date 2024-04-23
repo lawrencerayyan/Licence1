@@ -1,0 +1,13 @@
+void main() {
+    int x = readInt("entrez un nombre");
+    int y = readInt("entre un nombre");
+
+    for (int j = 0; j < x; j++) {
+        print("-");
+    }
+    print("|");
+    // for (int j = i + 1; j < x; j++) {
+    for (int j = y + 1; j > y - x - 1; j--) {
+        print("-");
+    }
+}

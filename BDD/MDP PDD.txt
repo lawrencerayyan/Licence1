@@ -1,0 +1,16 @@
+4prtAIai0ChU
+
+---------
+
+select dept.nom , count(emp.nom) from dept inner join emp on emp.nd=dept.nd group by emp.nd having  count(emp.nom)>3;
+
+select dept.nom , count(emp.nom) , job , avg(sal) from dept inner join emp on emp.nd=dept.nd group by job , emp.nd ;
+
+select dept.nom form dept inner join emp on dept.nd=emp.nd group by emp.nd having avg(sal)>2000 ;
+
+select e1.nom , echef.nom form emp e1 inner join emp echef on e1.nechef=echef.ne ;
+
+---------
+SELECT e1.nom, echef.nom FROM emp e1 INNER JOIN emp echef ON e1.nechef = echef.ne AND e1.nd != echef.nd;
+-- 12
+SELECT e1.nom,e1.datemb, echef.nom, echef.datemb FROM emp e1 INNER JOIN emp echef ON e1.nechef = echef.ne WHERE e1.datemb < echef.datemb;

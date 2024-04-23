@@ -1,0 +1,59 @@
+/*void main() {
+    int count = 0;
+    int y = 0;
+    double d = 0;
+
+    for (int i = 1; count != 6; i++) {
+        count = random(1, 7);
+
+        y = y + 1;
+    }
+    println(count);
+
+    println("il y a eu " + y + " essais");
+    double moyenne = count / y;
+    println("la moyenne est =" + moyenne);
+    d = moyenne / 10000;
+    print("on devise la moyenne sur 10000 = ");
+    println(d);
+}*/
+/*void main() {
+    int count = 0;
+    int y = 0;
+    double d = 0;
+    int cnt;
+    int total = 0;
+    int z = readInt("nombre d'essaie=");
+    for (int i = 1; count < 6; i++) {
+        count = random(1, 7);
+        cnt = 1;
+        while (count != 6) {
+            count = random(1, 7);
+            cnt++;
+            println(count);
+        }
+        println(cnt);
+        total = total + cnt;
+    }
+    total = total / z;
+
+    println("le moyenne est=" + total);
+}*/
+void main() {
+    int v = 0;
+    int count = 0;
+    double somme = 0;
+    for (int i = 0; i < 10000; i++) {
+        v = 0;
+        count = 0;
+        while (v != 6) {
+            v = random(1, 7);
+            count = count + 1;
+        }
+
+        somme = somme + count;
+    }
+
+    somme = somme / 10000;
+    println(somme);
+}

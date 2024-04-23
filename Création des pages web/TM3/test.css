@@ -1,0 +1,43 @@
+body{
+    border: 1px solid black ;
+    align-items: center;
+    justify-content: center;
+    
+}
+    
+        #menu {
+            
+            
+            margin-right: 350px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 15px;
+            }
+            /*input[type=text], input[type=password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+              }*/
+              
+         
+            button {
+                color: #fff;
+                background-color: #337ab7;
+                background-repeat: repeat-x;
+                border-color: #245580;
+                text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+                box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
+                background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+                padding: 5px;
+                margin: 8px 0;
+              }
+              button:hover{
+                text-decoration: none;
+              }
+        .container {
+            padding: 16px;
+            float: right!important;
+          }

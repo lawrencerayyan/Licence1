@@ -1,0 +1,75 @@
+// boolean recherche (int []tab, int x , int j ){
+//     if(j-1>0) {
+//         if(tab[j-1]== x ) return true;
+//         return recherche(tab , x , j - 1 ) ;
+//     }
+//     return false ;
+//     }
+    
+// void mutli(int [] tab , int x , int j){
+//     if (j > 0){
+//         tab[j-1] = tab[j-1]* x ;
+//         mutli(tab , x , j-1);
+//         print( tab [j - 1 ] + " ");
+//     }
+//     else {
+//       println("");
+//     }
+// }
+
+// boolean adjancentes ( int [] tab , int j){
+//     if (j > 0 ){
+//         if(tab[j]==tab[j+1]){
+//             return true;
+//         }else{
+//             return adjancentes ( tab , j-1);
+//         }
+//     }
+//     return false;
+// }
+
+// void reverse(int[] tab, int i,int j){
+//     int retenu = 0;
+//     if(i < j-1) {
+//         retenu = tab[i];
+//         tab[i] = tab[j-1];
+//         tab[j-1] = retenu;
+//         reverse(tab,i+1,j-1); 
+//         println(tab[j-1] + " ,");
+//     }
+// }
+
+// void main() {
+//      int[] tab = new int[] {1,2,3,4,5,6,7,8,9};
+//     // println (recherche(tab,9,tab.length-1));
+//     // mutli(tab , 2 , tab.length-1);
+//     // println("");
+//     // println ( adjancentes(tab , 5)); 
+//     // reverse(tab,2,4);
+
+//     // carre(4);
+//     print(pari(tab,tab.length));
+//  }
+
+// void carre(int n){
+//     int acc = 0 ; 
+//     if(n>=0) {
+//         carre(n-1);
+//         acc = n * n ;
+//         print(acc+",");
+//     }
+// }
+
+// int pari(int [] tab ,int i ){
+//     int acc = 0 ;
+//     if (i-1>0){
+//         if (tab[i-1]%2==0){
+//             acc = acc +1 ;
+//         }
+//         return acc + pari(tab , i-1);
+
+//     }
+//     return pari(tab,i-1);
+// }
+
+

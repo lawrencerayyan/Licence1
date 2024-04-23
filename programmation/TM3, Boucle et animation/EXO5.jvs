@@ -1,0 +1,20 @@
+void main() {
+
+    int b0, b1, b2, bi;
+    b0 = 1;
+    b1 = 1;
+    b2 = 1;
+    bi = 0;
+    println("b0=" + b0);
+    println("b1=" + b1);
+    println("b2=" + b2);
+    println("");
+    int k = readInt("Quel est votre K ?");
+    for (int i = 0; i < k - 2; i++) {
+        bi = b0 + b1 + b2 + i;
+        println("b" + (i + 3) + "=" + bi);
+        b0 = b1;
+        b1 = b2;
+        b2 = bi;
+    }
+}

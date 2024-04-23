@@ -1,0 +1,49 @@
+boolean contientApres(int[] tab,int n,int i){
+    boolean present = false;
+    for (int t = i; t < tab.length; t++) {
+        if(tab[t]==n){
+            present = true;
+        }
+    }
+    return present;
+}
+
+boolean doublons(int[] tab){
+    boolean present = false;
+    for (int i = 0; i < tab.length; i++) {
+        if(contientApres(tab,tab[i],i+1)){
+            present = true;
+        }
+    }
+    return present;
+}
+
+boolean permutation(int[] tab, int[] t){
+    boolean y;
+    boolean non = true;
+    if (tab.length>0 && t.length>0){
+        for (int i = 0; i < tab.length; i++) {
+            y = false;
+            for (int j = 0; j < t.length; j++) {
+                if(tab[i] == t[j]) {
+                    y = true;
+                }
+            }
+            if(!y) {
+                non = false;
+            }
+        }
+        if (!doublons(tab) && !doublons(t) && non){
+            return true;
+        } else {
+            return false;
+        }
+    } else if (tab.length==0 && t.length==0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void main() {
+}

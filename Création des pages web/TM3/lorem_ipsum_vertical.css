@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#menu{
+    font-size: large;
+}
+
+#menu > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#menu li a {
+    background-color: rgb(62, 66, 66);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    height: 50px;
+    width: 80px;
+    color: white;
+    text-align: left;
+
+    
+}
+#menu li a:hover{
+    background-color: tomato;
+}
+section{
+
+    grid-column: 2 /span 2;
+    grid-row: 1 / 1;
+    padding-left: 20px;
+   
+}
+.main{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr 20fr;
+}
+.Z{
+    background-color: lightpink;
+}

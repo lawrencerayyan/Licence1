@@ -1,0 +1,17 @@
+int [] somme_tableau(int [] tab1 , int [] tab2){
+    
+    if(tab1.length == tab2.length){
+        int [] tab3 = new int [tab1.length];
+for (int i = 0; i < tab1.length; i = i + 1) { 
+    tab3[i] = tab2[i] + tab1[i];
+}
+return tab3 ;
+}else {
+    int [] arg3 = new int []{0};
+    return arg3 ;
+}
+}
+
+void main() {
+    
+}

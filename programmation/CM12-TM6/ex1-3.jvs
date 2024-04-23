@@ -1,0 +1,21 @@
+boolean paire(int tab[]) {
+    boolean reponse = false ;
+    for (int i = 0; i < tab.length - 1; i++) {
+        if(tab[i] == tab[i + 1]) {
+            reponse = true ;
+        }
+    }
+    return reponse ; 
+}
+
+void main() {
+   int x = readInteger("la taille de tableau");
+    int[] tab = new int[x];
+    for (int i = 0; i < tab.length; i++) {
+        tab[i] = readInteger("valeur :");
+        println("tab[" + i + "]=" + tab[i]);
+    }
+    boolean s ;
+    s = paire(tab);
+    println(s);
+}
