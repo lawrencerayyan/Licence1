@@ -15,7 +15,7 @@ Bienvenue sur mon dépôt GitHub contenant mes travaux réalisés lors de ma pre
 - Langages : Java, HTML, Css , Bootstrap , SQL , Rubosta 
 
 
-**Compétences Acquises :**
+## Compétences Acquises :
 
 1. **Programmation et Algorithmique :**
    - Compréhension des concepts fondamentaux de la programmation.
